@@ -1,0 +1,107 @@
+{
+ "keyword": "bridge to polygon",
+ "h1": "Bridge to Polygon",
+ "brand": "Polygon Portal",
+ "niche": "bridge",
+ "verb": "Bridge",
+ "title": "Bridge to Polygon - Open App",
+ "meta_description": "bridge to polygon using Polygon Portal to connect your wallet, select a supported route, review gas, and open the official app.",
+ "palette": {
+  "mode": "dark",
+  "bg": "#000000",
+  "accent": "#8247E5",
+  "ink": "#FFFFFF"
+ },
+ "hero_h2": "Move assets onto Polygon PoS through the official portal",
+ "hero_lead": "bridge to polygon opens Polygon Portal for moving supported assets from Ethereum and other available routes into the Polygon PoS ecosystem after you connect a wallet and review each transaction.",
+ "badge": "PoS Bridge",
+ "widget": {
+  "from": "ETH/ERC-20",
+  "from_net": "Ethereum",
+  "to": "Polygon PoS",
+  "to_net": "Polygon",
+  "action": "Open Polygon Portal"
+ },
+ "trust": [
+  "Official Polygon Portal",
+  "EVM-compatible network",
+  "Verify activity on Polygonscan"
+ ],
+ "what_is": "Polygon Portal is the official Polygon interface for bridging, swapping, and managing assets on Polygon, linked from the <a href=\"https://polygon.technology/\">Polygon site</a>. Use it to connect a wallet, choose a route, and send supported tokens to Polygon PoS.",
+ "how": [
+  {
+   "t": "Connect wallet",
+   "d": "Open Polygon Portal and connect the wallet holding the source-chain funds."
+  },
+  {
+   "t": "Choose route",
+   "d": "Select the source network, Polygon PoS as destination, and a supported token."
+  },
+  {
+   "t": "Review prompts",
+   "d": "Check token, network, recipient wallet, gas, and approvals before signing."
+  },
+  {
+   "t": "Track transfer",
+   "d": "After confirmation, follow status in the portal or verify activity on Polygonscan."
+  }
+ ],
+ "points": [
+  {
+   "h": "Official entry point",
+   "p": "Polygon lists Portal as the place to bridge, swap, and manage assets on Polygon, so the primary action should route to the verified app domain."
+  },
+  {
+   "h": "Clear route review",
+   "p": "A careful flow separates source chain, destination network, token, gas, and wallet prompts before the transfer is signed."
+  },
+  {
+   "h": "Explorer-ready",
+   "p": "When a Polygon-side transaction is available, users can verify it on <a href=\"https://polygonscan.com/\">Polygonscan</a>."
+  }
+ ],
+ "eeat": [
+  {
+   "text": "Polygon official site",
+   "url": "https://polygon.technology/"
+  },
+  {
+   "text": "Polygon developer docs",
+   "url": "https://docs.polygon.technology/"
+  },
+  {
+   "text": "Ethereum bridge overview",
+   "url": "https://ethereum.org/bridges/"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How do I bridge to polygon from Ethereum?",
+   "a": "Open Polygon Portal, connect your wallet, choose Ethereum as the source and Polygon PoS as the destination, then review the route and wallet prompts before signing.",
+   "open": true
+  },
+  {
+   "q": "Is bridge to polygon an official Polygon app?",
+   "a": "The official destination is Polygon Portal at <a href=\"https://portal.polygon.technology/bridge\">portal.polygon.technology/bridge</a>; verify the domain before connecting a wallet.",
+   "open": false
+  },
+  {
+   "q": "What wallet do I need to bridge to polygon?",
+   "a": "Use a compatible self-custody wallet that supports the source network and Polygon PoS, and make sure it has enough native gas for the transaction.",
+   "open": false
+  },
+  {
+   "q": "How long does bridge to polygon take?",
+   "a": "Timing depends on the route, token, network congestion, and wallet confirmations; rely on the portal status and explorer records rather than fixed estimates.",
+   "open": false
+  },
+  {
+   "q": "What should I check before I bridge to polygon?",
+   "a": "Confirm the official domain, token, destination network, wallet address, approvals, and gas details; bridges involve smart-contract and operational risk.",
+   "open": false
+  }
+ ],
+ "official_url": "https://portal.polygon.technology/bridge",
+ "official_domain": "portal.polygon.technology",
+ "footer_note": "Not the official app; verify portal.polygon.technology before signing. Educational content only, not financial advice."
+}

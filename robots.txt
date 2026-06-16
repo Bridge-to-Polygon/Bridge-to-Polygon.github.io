@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bridge-to-polygon.github.io/sitemap.xml
