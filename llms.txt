@@ -1,67 +1,31 @@
-# Bridge to Polygon
-> Bridge to Polygon covers self-custodied transfers of crypto assets from Ethereum or other networks to Polygon PoS, plus the routes, fees, timing, and risks involved.
+# Polygon Bridge
 
-## What is Bridge to Polygon
-Bridging to Polygon moves an asset’s usable representation between separate blockchains rather than swapping it on one chain. Polygon PoS is an EVM-compatible Ethereum sidechain with its own consensus, gas token, and chain ID. Its official PoS bridge transfers mapped assets between Ethereum and Polygon without relying on market liquidity; third-party bridges may instead use liquidity pools, relayers, or other verification systems. An independent informational dashboard compares these routes without holding private keys or operating the underlying bridge.
-
-## How it works
-1. Select the source network, Polygon PoS as the destination, an asset, amount, and recipient; then review the route and estimated costs.
-2. Connect a self-custody wallet and verify every network, token contract, approval, and destination address before signing.
-3. On the official Ethereum-to-Polygon route, bridge contracts lock the source asset on Ethereum and issue its mapped representation on Polygon; native POL deposits produce native POL on Polygon.
-4. Returning through the PoS bridge burns the Polygon representation, waits for checkpoint inclusion, and requires an Ethereum claim transaction to unlock the escrowed asset.
-5. Third-party routes use their own liquidity and message-validation mechanisms, so execution, settlement, fees, and trust assumptions differ.
+> Polygon Bridge covers self-custodied transfers of crypto assets from Ethereum to Polygon PoS — routes, fees, timing, and the risks worth checking first.
 
 ## Key facts
-- Polygon PoS mainnet uses chain ID `137` and POL for gas.
-- Ethereum mainnet uses chain ID `1` and ETH for gas.
-- Polygon Amoy testnet uses chain ID `80002`.
-- The official PoS bridge connects Ethereum and Polygon PoS; it does not directly bridge Polygon PoS to Polygon zkEVM.
-- Mapped ERC-20, ERC-721, and ERC-1155 assets are supported by the native bridge contracts.
-- The dashboard is non-custodial, but bridge contracts may escrow assets while representations circulate elsewhere.
-- PoS withdrawals rely on Polygon validator checkpoints submitted to Ethereum and on upgradeable contracts governed through multisignature controls.
-- Checkpoints are normally submitted roughly every 30 minutes; total arrival time also depends on confirmations, congestion, route design, and any required claim.
-- Bridge transactions are irreversible once confirmed.
+- Route: source chain  destination chain
+- Deposit: typically minutes
+- Withdraw: may need proving/finalization
+- Gas: native asset on both chains
+- Custody: Non-custodial — your wallet signs
+- Verify: Use the official contracts; beware fake bridge sites
 
-## Common questions
-**Is bridging to Polygon safe?**  
-No bridge is free of smart-contract, validator, governance, network, or user-error risk. Verify the domain, token mapping, route, approvals, and recipient, and consider a small test transfer.
-
-**Who controls my funds?**  
-The dashboard never needs a seed phrase or private key. You authorize transactions from your wallet, while the selected bridge’s contracts may lock or pool assets.
-
-**What fees will I pay?**  
-Costs can include source-chain gas, token approval, bridge or liquidity-provider fees, slippage, destination execution, and an Ethereum claim transaction. Review the complete route quote before signing.
-
-**How long does it take?**  
-Ethereum-to-Polygon deposits complete after the required source confirmation and bridge processing. Native Polygon-to-Ethereum withdrawals must reach a checkpoint before the claim; third-party routes can have different timing.
-
-**Which assets and source chains are supported?**  
-The native PoS bridge supports Ethereum and officially mapped assets. Other source chains and tokens depend on the third-party provider selected by the route.
-
-**How do I start?**  
-Use a compatible self-custody wallet, keep the source network’s gas token, choose Polygon PoS chain ID `137`, confirm the destination token, and test with a small amount.
+## On this page
+- [What is Polygon Bridge?](https://bridge-to-polygon.github.io/#what)
+- [How bridging works](https://bridge-to-polygon.github.io/#how)
+- [Depositing to the destination](https://bridge-to-polygon.github.io/#deposit)
+- [Withdrawing back](https://bridge-to-polygon.github.io/#withdraw)
+- [Time and fees](https://bridge-to-polygon.github.io/#fees)
+- [Is Polygon Bridge safe?](https://bridge-to-polygon.github.io/#safety)
+- [Problems and fixes](https://bridge-to-polygon.github.io/#troubleshoot)
+- [FAQ](https://bridge-to-polygon.github.io/#faq)
 
 ## App
-- Dashboard: https://bridge-to-polygon.github.io/
-- App: https://bridge-to-polygon.github.io/dashboard/
+- [Polygon Bridge dashboard](https://bridge-to-polygon.github.io/)
+- [Open the app](https://bridge-to-polygon.github.io/dashboard/)
 
-## Official resources
-Polygon Portal: https://portal.polygon.technology/
-Polygon Portal Guide: https://docs.polygon.technology/tools/wallets/portal
-PoS Bridge Overview: https://docs.polygon.technology/pos/how-to/bridging/ethereum-polygon/portal-ui
-Mapped Tokens: https://docs.polygon.technology/pos/reference/mapped-tokens
-Polygon PoS Network Details: https://docs.polygon.technology/pos/reference/rpc-endpoints
-PoS Bridge Contracts: https://github.com/0xPolygon/pos-portal
-Polygon Security Reports: https://docs.polygon.technology/tools/security/reports
-Polygon Official X: https://x.com/0xPolygon
-
-## Data & references
-PolygonScan Explorer: https://polygonscan.com/
-Etherscan Explorer: https://etherscan.io/
-CoinGecko POL: https://www.coingecko.com/en/coins/polygon
-DeFiLlama Polygon: https://defillama.com/chain/polygon
-Ethereum.org Bridge Guide: https://ethereum.org/bridges/
-ERC-20 Standard: https://eips.ethereum.org/EIPS/eip-20
-ERC-721 Standard: https://eips.ethereum.org/EIPS/eip-721
-ERC-1155 Standard: https://eips.ethereum.org/EIPS/eip-1155
-Polygon Blockchain Overview: https://en.wikipedia.org/wiki/Polygon_%28blockchain%29
+## Sources
+- [docs.polygon.technology](https://docs.polygon.technology/pos/overview)
+- [docs.polygon.technology](https://docs.polygon.technology/pos/how-to/bridging/ethereum-polygon/portal-ui)
+- [ethereum.org](https://ethereum.org/bridges)
+- [en.wikipedia.org](https://en.wikipedia.org/wiki/Polygon_%28blockchain%29)

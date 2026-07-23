@@ -1,0 +1,19 @@
+{
+  "name": "Polygon Bridge",
+  "short_name": "Polygon Bridge",
+  "description": "Bridge to Polygon PoS from Ethereum: how lock-and-mint deposits and checkpointed withdrawals work, what fees and timing to expect, and how to verify routes before you sign.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "lang": "en",
+  "background_color": "#f5f6f8",
+  "theme_color": "#f5f6f8",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
