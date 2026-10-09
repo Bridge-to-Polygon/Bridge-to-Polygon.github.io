@@ -1,270 +1,267 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bridge to Polygon — Move ETH & Tokens to Polygon</title>
-  <meta name="description" content="Bridge to Polygon to move ETH, USDC and tokens from Ethereum to the Polygon network. See the route, fee and time before you sign, and keep your own keys.">
-  <link rel="canonical" href="https://bridge-to-polygon.github.io/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Bridge to Polygon">
-  <meta property="og:description" content="Bridge to Polygon to move ETH, USDC and tokens from Ethereum to the Polygon network. See the route, fee and time before you sign, and keep your own keys.">
-  <meta property="og:url" content="https://bridge-to-polygon.github.io/">
-  <meta property="og:image" content="https://bridge-to-polygon.github.io/og.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Bridge to Polygon">
-  <meta name="twitter:description" content="Bridge to Polygon to move ETH, USDC and tokens from Ethereum to the Polygon network. See the route, fee and time before you sign, and keep your own keys.">
-  <meta name="twitter:image" content="https://bridge-to-polygon.github.io/og.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bridge to Polygon — Move ETH & Tokens to Polygon</title>
+<meta name="description" content="Bridge to Polygon to move ETH, USDC and tokens from Ethereum to the Polygon network. See the route, fee and time before you sign, and keep your own keys.">
+<link rel="canonical" href="https://bridge-to-polygon.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bridge to Polygon">
+<meta property="og:description" content="Bridge to Polygon to move ETH, USDC and tokens from Ethereum to the Polygon network. See the route, fee and time before you sign, and keep your own keys.">
+<meta property="og:url" content="https://bridge-to-polygon.github.io/">
+<meta property="og:image" content="https://bridge-to-polygon.github.io/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bridge to Polygon">
+<meta name="twitter:description" content="Bridge to Polygon to move ETH, USDC and tokens from Ethereum to the Polygon network. See the route, fee and time before you sign, and keep your own keys.">
+<meta name="twitter:image" content="https://bridge-to-polygon.github.io/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://bridge-to-polygon.github.io/#website", "url": "https://bridge-to-polygon.github.io/", "name": "Bridge to Polygon — Move ETH & Tokens to Polygon"}, {"@type": "WebPage", "@id": "https://bridge-to-polygon.github.io/#webpage", "url": "https://bridge-to-polygon.github.io/", "name": "Bridge to Polygon — Move ETH & Tokens to Polygon", "isPartOf": {"@id": "https://bridge-to-polygon.github.io/#website"}, "description": "Bridge to Polygon to move ETH, USDC and tokens from Ethereum to the Polygon network. See the route, fee and time before you sign, and keep your own keys.", "datePublished": "2026-10-09", "dateModified": "2026-10-09"}, {"@type": "SoftwareApplication", "name": "Bridge to Polygon", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bridge-to-polygon.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Bridges"}, {"@type": "ListItem", "position": 3, "name": "Bridge to Polygon"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need POL to use assets on Polygon?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You pay Ethereum gas to bridge, and you need a little POL on Polygon to transact once your assets arrive."}}, {"@type": "Question", "name": "How long does it take to bridge to Polygon?", "acceptedAnswer": {"@type": "Answer", "text": "Usually minutes, after your Ethereum transaction gets enough confirmations; busy periods take longer."}}, {"@type": "Question", "name": "Which assets can I bridge to Polygon?", "acceptedAnswer": {"@type": "Answer", "text": "ETH, USDC, USDT, WBTC and other liquid tokens, depending on supported routes. The interface shows what is reachable and the amount received."}}, {"@type": "Question", "name": "Do I need an account to bridge to Polygon?", "acceptedAnswer": {"@type": "Answer", "text": "No. You connect a self-custody wallet and bridge on-chain, with no sign-up and no custody."}}, {"@type": "Question", "name": "What happens if my transfer fails?", "acceptedAnswer": {"@type": "Answer", "text": "A failed Ethereum transaction reverts and you keep your assets, though the gas for the attempt is spent."}}]}]}</script>
-  <style>
-    :root{--bg:#FFFDFB;--surface:#FFFFFF;--text:#17141A;--muted:#6B6570;--accent:#8247E5;--accent-ink:#FFFFFF;--radius:14px;--display:"Sora";--body:"Inter"}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:2rem}
-    body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.7 var(--body);-webkit-font-smoothing:antialiased}
-    a{color:var(--accent);text-underline-offset:.22em}
-    a:hover{text-decoration-thickness:2px}
-    :focus-visible{outline:3px solid var(--accent);outline-offset:5px}
-    ::selection{background:var(--accent);color:var(--accent-ink)}
-    h1,h2,h3,p{margin:0}
-    h1,h2,h3{font-family:var(--display);text-wrap:balance}
-    svg{display:block;flex-shrink:0}
-    img{max-width:100%;height:auto}
-    .ccc0312{width:min(1180px,calc(100% - 64px));margin-inline:auto}
-    .ced9f75{position:absolute;top:1rem;left:1rem;z-index:10;transform:translateY(-200%);padding:.7rem 1rem;background:var(--surface);border-radius:var(--radius)}
-    .ced9f75:focus{transform:translateY(0)}
-    .c1c779d{min-height:96px;display:flex;align-items:center;justify-content:space-between;gap:2rem;border-bottom:1px solid color-mix(in srgb,var(--text) 10%,transparent)}
-    .c2b371f{display:inline-flex;align-items:center;gap:.7rem;color:var(--text);font:600 1.2rem/1 var(--display);letter-spacing:-.04em;text-decoration:none}
-    .c15b4ef{display:grid;place-items:center;width:38px;height:38px;background:var(--accent);color:var(--accent-ink);border-radius:var(--radius)}
-    .c2be901{display:flex;align-items:center;gap:1.8rem}
-    .c2be901>a{font-size:.88rem;font-weight:600;color:var(--text);text-decoration:none}
-    .c2be901>a:hover{color:var(--accent)}
-    .c2be901 .c55181b{padding:.65rem 1rem;border:1px solid color-mix(in srgb,var(--text) 18%,transparent);border-radius:var(--radius)}
-    .cf048ef{padding-top:1.6rem;font-size:.8rem;color:var(--muted)}
-    .c6d9796{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;color:var(--muted)}
-    ol.c6d9796,ul.c6d9796,.c6d9796 ol,.c6d9796 ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.5rem}
-    .c6d9796 a{color:var(--muted);text-decoration:none}
-    .c6d9796 a:hover{color:var(--accent)}
-    .c6d9796 [aria-current]{color:var(--text)}
-    .ca845df{position:relative;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);align-items:center;gap:clamp(2rem,6vw,5.5rem);padding-block:4.5rem 5.5rem}
-    .cc3c000{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.35rem;color:var(--accent);font-size:.86rem;font-weight:600}
-    .cc3c000::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 10%,transparent)}
-    h1{font-size:clamp(2.5rem,4.8vw,4.7rem);line-height:1.06;letter-spacing:-.055em;overflow-wrap:anywhere}
-    h1 em{color:var(--accent);font-style:normal}
-    .cf0c612{margin-top:1.5rem;max-width:49ch;font-size:1.06rem;line-height:1.85;color:var(--muted)}
-    .ce9c19e{display:inline-flex;justify-content:center;align-items:center;gap:1.15rem;min-height:54px;padding:.9rem 1.4rem;border:1px solid color-mix(in srgb,var(--accent-ink) 12%,transparent);border-radius:var(--radius);background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 88%,var(--surface)),var(--accent));box-shadow:0 8px 20px color-mix(in srgb,var(--accent) 18%,transparent);color:var(--accent-ink);font:600 .95rem/1.4 var(--body);text-decoration:none;transition:transform .2s,box-shadow .2s}
-    .ce9c19e:hover{transform:translateY(-2px);box-shadow:0 12px 26px color-mix(in srgb,var(--accent) 26%,transparent)}
-    .c10313e>.ce9c19e{margin-top:2rem}
-    .cea03ea{margin-top:1.1rem;color:var(--muted);font-size:.8rem}
-    .c9f5b4a{position:relative;isolation:isolate;min-width:0;padding:1.7rem;background:var(--surface);border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:calc(var(--radius) * 1.5);box-shadow:0 28px 70px -20px color-mix(in srgb,var(--text) 19%,transparent),0 3px 10px color-mix(in srgb,var(--text) 4%,transparent)}
-    .c9f5b4a::before{content:"";position:absolute;inset:-28px;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 80% 20%,color-mix(in srgb,var(--accent) 14%,transparent),transparent 68%);border-radius:calc(var(--radius) * 2)}
-    .c5aec01{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1.5rem}
-    .c5aec01 h2{font-size:1.15rem;letter-spacing:-.035em}
-    .c128e16{padding:.25rem .65rem;border-radius:var(--radius);background:color-mix(in srgb,var(--accent) 10%,var(--surface));color:var(--accent);font-size:.72rem;font-weight:600}
-    .cfcd723{display:grid;grid-template-columns:minmax(0,1fr) 38px minmax(0,1fr);align-items:center;gap:.6rem;padding:1rem;border:1px solid color-mix(in srgb,var(--text) 9%,transparent);border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 65%,var(--surface))}
-    .ca801a1{min-width:0;display:flex;align-items:center;gap:.7rem}
-    .ca801a1:last-child{justify-content:flex-end}
-    .cb082a9{font-size:.76rem;color:var(--muted)}
-    .ccffd02{min-width:0;display:flex;align-items:center;justify-content:center;max-width:100px;min-height:38px;overflow-wrap:anywhere}
-    .ccffd02 img,.ccffd02 svg{max-width:100%;max-height:38px;object-fit:contain}
-    .c813324{display:grid;place-items:center;width:34px;height:34px;border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:50%;color:var(--accent);background:var(--surface)}
-    .c36e4b0{margin-top:1.5rem}
-    .cb03cef{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:.55rem}
-    .cb03cef label{font-size:.85rem;font-weight:600}
-    .ccee61b{font-size:.74rem;color:var(--muted)}
-    .c79f3e3{display:flex;align-items:center;gap:.8rem;padding:.85rem 1rem;border:1px solid color-mix(in srgb,var(--text) 20%,transparent);border-radius:var(--radius);background:var(--bg);transition:border-color .2s,box-shadow .2s}
-    .c79f3e3:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 12%,transparent)}
-    .c79f3e3:has([aria-invalid="true"]){border-color:var(--accent)}
-    .c79f3e3 input{width:100%;min-width:0;padding:0;border:0;outline:none;background:var(--bg);color:var(--text);font:500 2rem/1.25 var(--display);letter-spacing:-.04em;font-variant-numeric:tabular-nums}
-    .c79f3e3 input::placeholder{color:var(--muted)}
-    .c79f3e3>span{font-size:.8rem;color:var(--muted)}
-    .c362261{min-height:1.4em;margin-top:.5rem;font-size:.73rem;color:var(--muted)}
-    .c750d18{margin-top:1.3rem;padding:1.25rem;border:1px solid color-mix(in srgb,var(--accent) 17%,transparent);border-radius:var(--radius);background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 10%,var(--surface)),color-mix(in srgb,var(--accent) 3%,var(--surface)))}
-    .cd453cd{font-size:.8rem;color:var(--muted)}
-    .ce64789{display:flex;align-items:baseline;flex-wrap:wrap;gap:.5rem;margin:.25rem 0 1rem}
-    .ce64789 output{font:600 clamp(1.8rem,3vw,2.6rem)/1.2 var(--display);letter-spacing:-.05em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
-    .ce64789 span{font-size:.8rem;color:var(--muted)}
-    .c571978{display:grid;gap:.5rem;margin:0;padding-top:.9rem;border-top:1px solid color-mix(in srgb,var(--accent) 14%,transparent);font-size:.82rem}
-    .c571978>div{display:flex;justify-content:space-between;gap:1rem}
-    .c571978 dt{color:var(--muted)}
-    .c571978 dd{margin:0;font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
-    .c9f5b4a>.ce9c19e{width:100%;margin-top:1.2rem}
-    .c45c2a9{margin-top:1rem;font-size:.75rem;color:var(--muted)}
-    .c45c2a9 summary{cursor:pointer;width:fit-content;text-underline-offset:.2em}
-    .c45c2a9 summary:hover{color:var(--accent)}
-    .c45c2a9 p{margin-top:.55rem;line-height:1.7}
-    .c626e5b{padding:2rem 2.25rem;border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:var(--radius);background:var(--surface)}
-    .c4e2f02{font:600 1.4rem/1.3 var(--display);letter-spacing:-.035em;margin-bottom:1.25rem}
-    .c6fa6d1{overflow-x:auto}
-    .c97b32c{width:100%;border-collapse:collapse;text-align:left;font-size:.9rem}
-    .c97b32c caption{text-align:left;margin-bottom:1rem;color:var(--muted)}
-    .c97b32c th,.c97b32c td{padding:1rem 1.2rem;border-bottom:1px solid color-mix(in srgb,var(--text) 8%,transparent);vertical-align:top}
-    .c97b32c th:first-child,.c97b32c td:first-child{padding-left:0}
-    .c97b32c th:last-child,.c97b32c td:last-child{padding-right:0}
-    .c97b32c th{font-weight:600;color:var(--text)}
-    .c97b32c td{color:var(--muted)}
-    .c97b32c tbody tr:last-child>*{border-bottom:0}
-    .c97b32c thead{background:color-mix(in srgb,var(--accent) 5%,var(--surface))}
-    .c3c3c25{max-width:820px;margin:4.5rem auto}
-    .c1078a0{margin-block:0 3rem;padding-bottom:2.75rem;border-bottom:1px solid color-mix(in srgb,var(--text) 10%,transparent)}
-    .cb735e4{margin:0 0 1.2rem;font:600 clamp(1.65rem,3vw,2.25rem)/1.2 var(--display);letter-spacing:-.04em}
-    .ccf6f51{color:var(--muted);line-height:1.9;overflow-wrap:anywhere}
-    .ccf6f51 p+p{margin-top:1.1rem}
-    .ccf6f51 h3{margin:1.8rem 0 .7rem;font-size:1.25rem;line-height:1.4;color:var(--text)}
-    .ccf6f51 strong{color:var(--text);font-weight:600}
-    .ccf6f51 ul,.ccf6f51 ol{padding-left:1.4rem;margin-block:1.2rem}
-    .ccf6f51 li+li{margin-top:.55rem}
-    .ccf6f51 li::marker{color:var(--accent)}
-    .ccf6f51 blockquote{margin:1.5rem 0;padding:1rem 1.4rem;border-left:3px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0;background:color-mix(in srgb,var(--accent) 6%,var(--surface));color:var(--text)}
-    .ca44408{margin-block:.8rem;border:1px solid color-mix(in srgb,var(--text) 12%,transparent);border-radius:var(--radius);background:var(--surface);overflow:hidden}
-    .c5e94ea{position:relative;cursor:pointer;padding:1.2rem 3.3rem 1.2rem 1.35rem;list-style:none;font:500 1.05rem/1.5 var(--display);color:var(--text)}
-    .c5e94ea::-webkit-details-marker{display:none}
-    .c5e94ea::after{content:"+";position:absolute;right:1.35rem;top:1.15rem;color:var(--accent);font-size:1.3rem}
-    .ca44408[open]>.c5e94ea::after{content:"−"}
-    .ca44408[open]{border-color:color-mix(in srgb,var(--accent) 35%,transparent)}
-    .c5e94ea:focus-visible{outline-offset:-5px;border-radius:var(--radius)}
-    .c1f47b6{padding:0 1.35rem 1.35rem;color:var(--muted);font-size:.95rem;line-height:1.85;overflow-wrap:anywhere}
-    .c1f47b6 p+p{margin-top:.8rem}
-    .c5a5621{padding:2rem 2.25rem;border-radius:var(--radius);background:color-mix(in srgb,var(--surface) 75%,var(--bg));border:1px solid color-mix(in srgb,var(--text) 8%,transparent)}
-    .cdb9ed5{margin:0;padding-left:1.2rem;color:var(--muted);font-size:.86rem}
-    .c3558fa{padding:.35rem 0 .35rem .3rem;overflow-wrap:anywhere}
-    .c3558fa::marker{color:var(--muted)}
-    .c3558fa a{color:var(--text);text-decoration-color:color-mix(in srgb,var(--accent) 45%,transparent)}
-    .c3558fa a:hover{color:var(--accent)}
-    .ce4cff1{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-top:3rem;padding-block:1.7rem 2rem;border-top:1px solid color-mix(in srgb,var(--text) 10%,transparent);color:var(--muted);font-size:.78rem}
-    .c019e03{font:600 .95rem/1.4 var(--display);color:var(--text)}
-    @media(min-width:1400px){.ca845df{padding-block:5.5rem 6.5rem}}
-    @media(max-width:900px){.ca845df{gap:2rem;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.c9f5b4a{padding:1.25rem}.cfcd723{padding:.8rem}.ca801a1{flex-direction:column;gap:.25rem}.ca801a1:last-child{flex-direction:column-reverse}h1{font-size:clamp(2.5rem,5.5vw,4rem)}}
-    @media(max-width:720px){.ccc0312{width:calc(100% - 40px)}.c1c779d{min-height:78px;gap:1rem}.c2be901{gap:1rem}.c2be901>.c1b3f6c{display:none}.ca845df{grid-template-columns:minmax(0,1fr);padding-block:2.75rem 3rem;gap:2.5rem}.c10313e{max-width:560px}h1{font-size:clamp(2.6rem,9vw,4rem)}.cf0c612{font-size:1rem}.c9f5b4a{width:100%;max-width:520px;justify-self:center;padding:1.5rem}.ca801a1,.ca801a1:last-child{flex-direction:row}.c626e5b,.c5a5621{padding:1.5rem}.c3c3c25{margin-block:3rem}.c97b32c th,.c97b32c td{padding:.85rem .75rem}.c1078a0{margin-bottom:2rem;padding-bottom:2rem}.ce4cff1{margin-top:2rem}}
-    @media(max-width:380px){.ccc0312{width:calc(100% - 28px)}.c9f5b4a{padding:1rem}.c2b371f{font-size:1.05rem}.c2be901 .c55181b{padding:.55rem .7rem}.ca801a1,.ca801a1:last-child{flex-direction:column}.ca801a1:last-child{flex-direction:column-reverse}.c626e5b,.c5a5621{padding:1.1rem}.c571978{font-size:.76rem}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
-  </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://bridge-to-polygon.github.io/#website", "url": "https://bridge-to-polygon.github.io/", "name": "Bridge to Polygon — Move ETH & Tokens to Polygon"}, {"@type": "WebPage", "@id": "https://bridge-to-polygon.github.io/#webpage", "url": "https://bridge-to-polygon.github.io/", "name": "Bridge to Polygon — Move ETH & Tokens to Polygon", "isPartOf": {"@id": "https://bridge-to-polygon.github.io/#website"}, "description": "Bridge to Polygon to move ETH, USDC and tokens from Ethereum to the Polygon network. See the route, fee and time before you sign, and keep your own keys.", "datePublished": "2026-10-09", "dateModified": "2026-10-09"}, {"@type": "SoftwareApplication", "name": "Bridge to Polygon", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bridge-to-polygon.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Bridges"}, {"@type": "ListItem", "position": 3, "name": "Bridge to Polygon"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What are Heimdall and Bor on Polygon?", "acceptedAnswer": {"@type": "Answer", "text": "Bor is the layer that produces Polygon's blocks quickly; Heimdall is the proof-of-stake validator layer that agrees on Bor's state and checkpoints it to Ethereum. Together they let Polygon run fast while staying anchored to Ethereum's security."}}, {"@type": "Question", "name": "Why does a Polygon withdrawal take longer than a deposit?", "acceptedAnswer": {"@type": "Answer", "text": "Deposits only need Ethereum to confirm your transaction. Withdrawals wait for Heimdall to bundle Polygon blocks into a checkpoint and submit it to Ethereum, which runs on a fixed schedule rather than per-transaction."}}, {"@type": "Question", "name": "Is Polygon PoS the same network as Polygon zkEVM?", "acceptedAnswer": {"@type": "Answer", "text": "No. They are separate networks with separate bridges. Moving to Polygon zkEVM requires the zkEVM bridge, not the PoS bridge, and assets on one do not appear automatically on the other."}}, {"@type": "Question", "name": "What is POL and do I need it?", "acceptedAnswer": {"@type": "Answer", "text": "POL is the token that replaced MATIC as Polygon's gas and staking asset. You need a small balance of it to pay for any transaction on Polygon, regardless of which asset you bridged in."}}, {"@type": "Question", "name": "Is a third-party bridge to Polygon safe to use?", "acceptedAnswer": {"@type": "Answer", "text": "It can be, but it relies on that provider's own liquidity and trust assumptions rather than Polygon's checkpoint-secured canonical path. It's a reasonable trade for speed on smaller, time-sensitive transfers, less so for large ones."}}, {"@type": "Question", "name": "What happened to Polygon's Plasma bridge?", "acceptedAnswer": {"@type": "Answer", "text": "Plasma was Polygon's original exit mechanism for a small set of assets and is being phased out in favor of the checkpoint-based PoS bridge, which now covers the overwhelming majority of transfers."}}, {"@type": "Question", "name": "Do I keep custody of my assets while bridging?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every step — deposit, checkpoint wait and withdrawal — is a transaction signed from your own wallet, and the asset stays at your address rather than passing through a custodian."}}]}]}</script>
+<style>
+:root{--bg:#FFFDFB;--surface:#FFFFFF;--text:#17141A;--muted:#6B6570;--accent:#8247E5;--accent-ink:#FFFFFF;--radius:14px;--display:"Sora";--body:"Inter"}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:2rem}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.7 var(--body);-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:var(--accent-ink)}
+a{color:var(--text);text-underline-offset:.22em;text-decoration-thickness:1px}
+a:hover{color:var(--accent)}
+a,input,summary{touch-action:manipulation}
+:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
+img,svg{max-width:100%;vertical-align:middle}
+img{height:auto}
+h1,h2,h3,h4,h5,h6{font-family:var(--display);line-height:1.15;letter-spacing:-.035em;text-wrap:balance}
+p{margin:0 0 1.25rem}
+.cadafe5{width:min(1180px,calc(100% - 4rem));margin-inline:auto}
+.c29beb2{position:absolute;top:1rem;left:1rem;transform:translateY(-180%);z-index:5;padding:.65rem 1rem;background:var(--surface);border-radius:var(--radius)}
+.c29beb2:focus{transform:translateY(0)}
+.cc02e73{min-height:96px;display:flex;align-items:center;justify-content:space-between;gap:2rem;border-bottom:1px solid color-mix(in srgb,var(--text) 10%,transparent)}
+.cb3a5a1{display:flex;align-items:center;gap:.75rem;font:650 1.15rem/1.2 var(--display);letter-spacing:-.035em}
+.c4521fb{display:grid;place-items:center;width:38px;height:38px;background:var(--accent);color:var(--accent-ink);border-radius:var(--radius)}
+.c7836e3{width:20px;height:20px;fill:none;stroke:var(--text);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.c4521fb .c7836e3,.cf01d94 .c7836e3{stroke:var(--accent-ink)}
+.c54d719{display:flex;align-items:center;gap:1.75rem;font-size:.875rem;font-weight:550}
+.c54d719 a{text-decoration:none}
+.c54d719 .ce59e77{padding:.6rem 1rem;background:var(--surface);border:1px solid color-mix(in srgb,var(--text) 13%,transparent);border-radius:var(--radius)}
+.cc8886e{padding-block:1.6rem .5rem;font-size:.8rem;color:var(--muted);overflow-wrap:anywhere}
+.cc7ce89{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;list-style:none;padding:0;margin:0;color:var(--muted)}
+.cc7ce89 a{color:var(--muted);text-decoration:none}
+.cc7ce89 a:hover{color:var(--text);text-decoration:underline}
+.c977313{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:clamp(2rem,6vw,6rem);align-items:center;padding-block:3.5rem 5.5rem}
+.cef6ea3{min-width:0}
+.c935041{display:flex;align-items:center;gap:.6rem;margin-bottom:1.4rem;color:var(--muted);font-size:.875rem}
+.c935041::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 12%,transparent)}
+h1{font-size:clamp(2.65rem,4.7vw,4.7rem);font-weight:600;margin:0 0 1.5rem;overflow-wrap:anywhere}
+h1 em{font-style:normal;color:var(--accent)}
+.cb0629b{font-size:1.075rem;line-height:1.85;color:var(--muted);max-width:48ch;margin-bottom:2rem}
+.cf01d94{display:inline-flex;align-items:center;justify-content:center;gap:1.4rem;min-height:52px;padding:.85rem 1.4rem;background:linear-gradient(120deg,color-mix(in srgb,var(--accent) 88%,var(--surface)),var(--accent));color:var(--accent-ink);font-weight:650;font-size:.9rem;text-decoration:none;border:1px solid color-mix(in srgb,var(--accent) 80%,var(--text));border-radius:var(--radius);box-shadow:0 5px 14px color-mix(in srgb,var(--accent) 18%,transparent);transition:transform .18s ease,box-shadow .18s ease}
+.cf01d94:hover{color:var(--accent-ink);transform:translateY(-2px);box-shadow:0 9px 24px color-mix(in srgb,var(--accent) 25%,transparent)}
+.c4bd701{position:relative;isolation:isolate;min-width:0;background:var(--surface);border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:var(--radius);box-shadow:0 24px 65px -28px color-mix(in srgb,var(--text) 28%,transparent),0 3px 10px color-mix(in srgb,var(--text) 4%,transparent)}
+.c4bd701::before{content:"";position:absolute;inset:-1.5rem;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 80% 15%,color-mix(in srgb,var(--accent) 13%,transparent),color-mix(in srgb,var(--accent) 0%,transparent) 68%);border-radius:var(--radius)}
+.cca3752{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.5rem 1.75rem;border-bottom:1px solid color-mix(in srgb,var(--text) 9%,transparent)}
+.cca3752 h2{font-size:1.2rem;font-weight:600;margin:0}
+.cdf474a{font-size:.72rem;line-height:1.4;color:var(--muted);padding:.35rem .65rem;border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:var(--radius)}
+.ca4ed8a{padding:1.6rem 1.75rem 1.75rem}
+.c609bf4{display:grid;grid-template-columns:minmax(0,1fr) 36px minmax(0,1fr);align-items:center;gap:.6rem;margin-bottom:1.5rem}
+.c4befd6{min-width:0;display:flex;align-items:center;gap:.75rem;padding:.85rem;background:var(--bg);border:1px solid color-mix(in srgb,var(--text) 7%,transparent);border-radius:var(--radius)}
+.c73eda6{font-size:.75rem;color:var(--muted)}
+.c5567bb{display:flex;align-items:center;justify-content:center;min-width:0;overflow-wrap:anywhere;line-height:1.25;font-size:.8rem}
+.c5567bb img,.c5567bb svg{width:32px;max-height:32px;object-fit:contain}
+.cbdac93{display:grid;place-items:center;height:36px;border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:50%}
+.c182225{display:block;margin-bottom:.5rem;font-size:.825rem;font-weight:550}
+.c043495{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin:0 0 1.3rem}
+.c839350{min-width:0}
+.c283e53{position:relative}
+.c283e53::after{content:"";position:absolute;right:.9rem;top:50%;width:.5rem;height:.5rem;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+.c011845{width:100%;padding:.7rem 2rem .7rem .85rem;background:var(--bg);color:var(--text);border:1px solid color-mix(in srgb,var(--text) 18%,transparent);border-radius:var(--radius);font:550 .9rem/1.3 var(--body);appearance:none;-webkit-appearance:none;cursor:pointer}
+.c011845:focus-visible{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 13%,transparent)}
+.cbac7e7{display:flex;align-items:center;gap:.5rem;padding:.8rem 1rem;background:var(--bg);border:1px solid color-mix(in srgb,var(--text) 18%,transparent);border-radius:var(--radius)}
+.cbac7e7:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 13%,transparent)}
+.cbac7e7 input{width:100%;min-width:0;padding:0;border:0;outline:none;background:var(--bg);color:var(--text);font:550 2rem/1.3 var(--display);font-variant-numeric:tabular-nums}
+.cbac7e7 input::placeholder{color:var(--muted)}
+.cfc7c60{font-size:.8rem;color:var(--muted)}
+.ccc4b4b{font-size:.72rem;line-height:1.6;color:var(--muted);margin:.6rem 0 1.3rem}
+.c317391{font-size:.8rem;color:var(--text);margin:.6rem 0}
+[hidden]{display:none!important}
+.c19d49c{padding:1.2rem;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 10%,var(--surface)),color-mix(in srgb,var(--accent) 3%,var(--surface)));border:1px solid color-mix(in srgb,var(--accent) 18%,transparent);border-radius:var(--radius)}
+.cee8524{display:block;color:var(--muted);font-size:.78rem;margin-bottom:.3rem}
+.c3b5d03{display:block;font:600 clamp(1.9rem,3vw,2.6rem)/1.2 var(--display);letter-spacing:-.045em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.cec4e92{font:400 .8rem/1.5 var(--body);letter-spacing:0;color:var(--muted)}
+.c45586c{display:grid;gap:.6rem;margin:1rem 0 0;padding-top:.9rem;border-top:1px solid color-mix(in srgb,var(--text) 10%,transparent);font-size:.8rem}
+.c45586c div{display:flex;justify-content:space-between;gap:1rem}
+.c45586c dt{color:var(--muted)}
+.c45586c dd{margin:0;text-align:right;font-weight:550;font-variant-numeric:tabular-nums}
+.c4bd701 .cf01d94{display:flex;width:100%;margin-top:1.25rem;justify-content:space-between}
+.cf739b1{margin-top:1rem;color:var(--muted);font-size:.75rem}
+.cf739b1 summary{cursor:pointer;text-underline-offset:.2em}
+.cf739b1 summary:hover{color:var(--text)}
+.cf739b1 p{margin:.7rem 0 0;line-height:1.7}
+.cc23b41{padding:2rem 2.25rem;background:var(--surface);border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:var(--radius)}
+.c13305c{font-size:1.4rem;font-weight:600;margin:0 0 1.4rem}
+.c3bec37{overflow-x:auto}
+.cd74648{width:100%;border-collapse:collapse;text-align:left;font-size:.9rem}
+.cd74648 caption{text-align:left;color:var(--muted);padding-bottom:1rem}
+.cd74648 th,.cd74648 td{padding:1rem 1.1rem;border-bottom:1px solid color-mix(in srgb,var(--text) 9%,transparent);vertical-align:top;overflow-wrap:anywhere}
+.cd74648 th{font-weight:550;color:var(--muted)}
+.cd74648 th:first-child,.cd74648 td:first-child{padding-left:0}
+.cd74648 th:last-child,.cd74648 td:last-child{padding-right:0}
+.cd74648 tbody tr:last-child>*{border-bottom:0}
+.ceacb41{width:min(800px,100%);margin:4.5rem auto}
+.c09570f{margin-bottom:3.25rem;scroll-margin-top:2rem}
+.c27ebb4{font:600 clamp(1.65rem,3vw,2.3rem)/1.2 var(--display);letter-spacing:-.035em;margin:0 0 1.25rem;text-wrap:balance}
+.c8931cd{color:var(--muted);font:400 1rem/1.85 var(--body);overflow-wrap:anywhere}
+.c8931cd h3,.c8931cd h4{color:var(--text);margin:1.8rem 0 .8rem}
+.c8931cd strong{color:var(--text);font-weight:600}
+.c8931cd a,.c0b5df5 a,.c9abc37 a{text-decoration-color:color-mix(in srgb,var(--accent) 60%,var(--text))}
+.c8931cd ul,.c8931cd ol,.c0b5df5 ul,.c0b5df5 ol{padding-left:1.4rem}
+.c8931cd li+li,.c0b5df5 li+li{margin-top:.5rem}
+.c8931cd blockquote{margin:1.8rem 0;padding:.3rem 0 .3rem 1.25rem;border-left:3px solid var(--accent);color:var(--text)}
+.c8931cd blockquote p:last-child{margin-bottom:0}
+.c8931cd table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse}
+.c8931cd th,.c8931cd td{padding:.75rem;border:1px solid color-mix(in srgb,var(--text) 12%,transparent);text-align:left}
+.c8931cd code,.c8931cd pre{font-family:var(--body);background:var(--surface);border-radius:var(--radius)}
+.c8931cd pre{padding:1rem;overflow-x:auto}
+.c496872{margin:.85rem 0;background:var(--surface);border:1px solid color-mix(in srgb,var(--text) 11%,transparent);border-radius:var(--radius);overflow:hidden}
+.c512286{position:relative;list-style:none;cursor:pointer;padding:1.3rem 3.8rem 1.3rem 1.4rem;font:550 1.05rem/1.5 var(--display);color:var(--text)}
+.c512286::-webkit-details-marker{display:none}
+.c512286::after{content:"+";position:absolute;right:1.4rem;top:1.25rem;font:400 1.4rem/1.2 var(--body);color:var(--muted)}
+.c496872[open]>.c512286::after{content:"−"}
+.c496872[open]{border-color:color-mix(in srgb,var(--accent) 40%,transparent)}
+.c512286:focus-visible{outline-offset:-5px}
+.c0b5df5{padding:0 1.4rem 1.4rem;color:var(--muted);font-size:.95rem;line-height:1.8;overflow-wrap:anywhere}
+.c0b5df5 p:last-child{margin-bottom:0}
+.c30ef9d{padding:2rem 0 3rem;border-top:1px solid color-mix(in srgb,var(--text) 12%,transparent)}
+.caa3989{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem 2rem;list-style:none;padding:0;margin:0}
+.c9abc37{font-size:.85rem;color:var(--muted);overflow-wrap:anywhere;padding:.65rem 0}
+.c103752{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding-block:1.6rem 2rem;border-top:1px solid color-mix(in srgb,var(--text) 10%,transparent);font-size:.8rem;color:var(--muted)}
+.c103752 p{margin:0}
+.c103752 a{color:var(--muted)}
+@media(min-width:1500px){.c977313{padding-block:5rem 6rem}}
+@media(max-width:900px){.c977313{gap:2rem}.cca3752,.ca4ed8a{padding:1.25rem}.c4befd6{padding:.65rem;gap:.5rem}.c54d719{gap:1rem}}
+@media(max-width:760px){.cadafe5{width:calc(100% - 2.5rem)}.cc02e73{min-height:80px;gap:1rem}.c54d719 .ca3e522{display:none}.c977313{grid-template-columns:1fr;padding-block:2.5rem 3rem;gap:2.5rem}.cef6ea3{max-width:600px}h1{font-size:clamp(2.6rem,9vw,4rem)}.cb0629b{max-width:55ch}.c4bd701{width:100%;max-width:520px;justify-self:center}.c4bd701::before{inset:-.75rem}.cc23b41{padding:1.5rem}.ceacb41{margin-block:3rem}.caa3989{grid-template-columns:1fr;gap:.25rem}.c103752{align-items:flex-start;flex-direction:column;gap:.6rem}}
+@media(max-width:380px){.cadafe5{width:calc(100% - 2rem)}.cb3a5a1{font-size:1rem;gap:.5rem}.c4521fb{width:30px;height:30px}.c54d719 .ce59e77{padding:.55rem .7rem}.cca3752,.ca4ed8a{padding:1rem}.c609bf4{gap:.4rem;grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr)}.cbdac93{height:28px}.c4befd6{flex-direction:column;align-items:flex-start}.cc23b41{padding:1.1rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cf01d94{transition:none}}
+</style>
 </head>
 <body>
-  <a class="ced9f75" href="#content">Skip to content</a>
-  <div class="ccc0312">
-    <nav class="c1c779d" aria-label="Primary navigation">
-      <a class="c2b371f" href="#" aria-label="Transfer guide home">
-        <span class="c15b4ef" aria-hidden="true"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><path d="M5 19V11a7 7 0 0 1 14 0v8M9 19v-8a3 3 0 0 1 6 0v8" stroke="var(--accent-ink)" stroke-width="1.7" stroke-linecap="round"/></svg></span>
-        Transfer guide
-      </a>
-      <div class="c2be901">
-        <a class="c1b3f6c" href="#key-facts">Key facts</a>
-        <a class="c1b3f6c" href="#sources">Sources</a>
-        <a class="c55181b" href="dashboard/">Open app <span aria-hidden="true">↗</span></a>
-      </div>
-    </nav>
-    <div class="cf048ef"><nav class="c6d9796" aria-label="Breadcrumb"><a href="dashboard/">Home</a> <span>/</span> <span>Bridges</span> <span>/</span> <span>Bridge to Polygon</span></nav></div>
-    <section class="ca845df" aria-labelledby="hero-heading">
-      <div class="c10313e">
-        <span class="cc3c000">Transfer calculator</span>
-        <h1 id="hero-heading">Bridge to <em>Polygon</em>.</h1>
-        <p class="cf0c612">To bridge to Polygon you move ETH, USDC and other tokens from Ethereum to the Polygon network, where fees are low and gas is paid in POL. You review the route, the fee and the amount received before you sign, and your funds stay in your own wallet the whole time.</p>
-        <a class="ce9c19e" href="dashboard/">Open app <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="var(--accent-ink)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <p class="cea03ea">Estimate the fee. See the timing. Plan your transfer.</p>
-      </div>
-      <aside class="c9f5b4a" aria-labelledby="calculator-heading">
-        <div class="c5aec01">
-          <h2 id="calculator-heading">Your transfer, calculated</h2>
-          <span class="c128e16">Estimator</span>
-        </div>
-        <div class="cfcd723" aria-label="Transfer route">
-          <div class="ca801a1"><span class="ccffd02"><img src="assets/tokens/eth.svg" alt="Ethereum" width="28" height="28"></span><span class="cb082a9">From</span></div>
-          <span class="c813324" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="var(--accent)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <div class="ca801a1"><span class="cb082a9">To</span><span class="ccffd02"><img src="assets/tokens/polygon.svg" alt="Polygon" width="28" height="28"></span></div>
-        </div>
-        <div class="c36e4b0">
-          <div class="cb03cef"><label for="amount">You send</label><span class="ccee61b">Transfer amount</span></div>
-          <div class="c79f3e3"><input id="amount" type="text" inputmode="decimal" value="1000" autocomplete="off" spellcheck="false" maxlength="24" aria-describedby="amount-help" aria-invalid="false"><span>units</span></div>
-          <p id="amount-help" class="c362261">Enter an amount from 1 to 1,000,000 units.</p>
-        </div>
-        <div class="c750d18" aria-live="polite" aria-atomic="true">
-          <p class="cd453cd">Estimated amount received</p>
-          <div class="ce64789"><output id="received" for="amount">993.50</output><span>units</span></div>
-          <dl class="c571978">
-            <div><dt>Estimated fee</dt><dd><output id="fee" for="amount">6.50</output> units</dd></div>
-            <div><dt>Estimated time</dt><dd><output id="time" for="amount">3–7 min</output></dd></div>
-          </dl>
-        </div>
-        <a class="ce9c19e" href="dashboard/">Continue to app <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="var(--accent-ink)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <details class="c45c2a9">
-          <summary>How the estimate works</summary>
-          <p>The fee is 0.6% of the amount plus 0.50 units, rounded to two decimals. The received amount is the input minus this fee, with a 1:1 unit conversion. Timing is 2–6 minutes plus one minute for each 1,000 units, rounded up and capped at 10 extra minutes.</p>
-        </details>
-        <noscript><p class="c362261">Enable JavaScript to calculate a different amount.</p></noscript>
-      </aside>
-    </section>
-    <section id="key-facts" class="c626e5b" aria-labelledby="facts-heading">
-      <h2 id="facts-heading" class="c4e2f02">Key facts</h2>
-      <div class="c6fa6d1"><table class="c97b32c"><tbody><tr><th scope="row">From / to</th><td>Ethereum → Polygon</td></tr>
-<tr><th scope="row">Assets</th><td>ETH, USDC, USDT, WBTC and more</td></tr>
-<tr><th scope="row">Gas on Polygon</th><td>Paid in POL</td></tr>
-<tr><th scope="row">Typical time</th><td>Minutes, after source confirmations</td></tr>
-<tr><th scope="row">Custody</th><td>Self-custody — you hold your keys</td></tr></tbody></table></div>
-    </section>
-    <main id="content" class="c3c3c25">
-      <section class="c1078a0"><h2 class="cb735e4">How to bridge to Polygon</h2><div class="ccf6f51"><strong>Connect a wallet, choose the asset and amount, and confirm.</strong> To bridge to Polygon you select the token on Ethereum, review the route, the fee and the amount that will arrive, then approve and sign. Assets appear on Polygon once the source transaction confirms, and nothing moves until you sign.</div></section>
-<section class="c1078a0"><h2 class="cb735e4">Fees and time to bridge to Polygon</h2><div class="ccf6f51">The cost to bridge to Polygon is the Ethereum gas to send plus any protocol fee; transacting on Polygon afterwards is cheap because POL gas is low. Deposits settle after Ethereum confirmations, usually minutes. The quote shows the amount received before you commit.</div></section>
-<section class="c1078a0"><h2 class="cb735e4">What you can bridge to Polygon</h2><div class="ccf6f51">You can bridge ETH, USDC, USDT, WBTC and other liquid assets to Polygon, where they work across its large DeFi ecosystem — DEXs, lending, gaming and liquidity. Availability depends on supported routes; the interface lists reachable assets and the expected amount for each.</div></section>
-<section class="c1078a0"><h2 class="cb735e4">Is it safe to bridge to Polygon?</h2><div class="ccf6f51">A self-custody bridge keeps your keys in your wallet. Confirm the destination token's contract address, the amount received and the approval you grant, prefer a limited approval, and keep a little POL for gas. Treat any seed-phrase request as fraud.</div></section>
-<section class="c1078a0"><h2 class="cb735e4">Native Polygon bridge vs third-party routes</h2><div class="ccf6f51">The native route bridges major assets directly between Ethereum and Polygon; third-party bridges can be faster or reach more chains, at the cost of another contract and fee. Judge any route by the <strong>net amount received</strong> and prefer audited options with deep liquidity.</div></section>
-      <details class="ca44408"><summary class="c5e94ea">Do I need POL to use assets on Polygon?</summary><div class="c1f47b6">Yes. You pay Ethereum gas to bridge, and you need a little POL on Polygon to transact once your assets arrive.</div></details>
-<details class="ca44408"><summary class="c5e94ea">How long does it take to bridge to Polygon?</summary><div class="c1f47b6">Usually minutes, after your Ethereum transaction gets enough confirmations; busy periods take longer.</div></details>
-<details class="ca44408"><summary class="c5e94ea">Which assets can I bridge to Polygon?</summary><div class="c1f47b6">ETH, USDC, USDT, WBTC and other liquid tokens, depending on supported routes. The interface shows what is reachable and the amount received.</div></details>
-<details class="ca44408"><summary class="c5e94ea">Do I need an account to bridge to Polygon?</summary><div class="c1f47b6">No. You connect a self-custody wallet and bridge on-chain, with no sign-up and no custody.</div></details>
-<details class="ca44408"><summary class="c5e94ea">What happens if my transfer fails?</summary><div class="c1f47b6">A failed Ethereum transaction reverts and you keep your assets, though the gas for the attempt is spent.</div></details>
-    </main>
-    <section id="sources" class="c5a5621" aria-labelledby="sources-heading">
-      <h2 id="sources-heading" class="c4e2f02">Sources</h2>
-      <ul class="cdb9ed5"><li><a class="c3558fa" href="https://docs.polygon.technology/" rel="nofollow noopener" target="_blank">Polygon documentation</a></li>
-<li><a class="c3558fa" href="https://en.wikipedia.org/wiki/Polygon_(blockchain)" rel="nofollow noopener" target="_blank">Polygon on Wikipedia</a></li>
-<li><a class="c3558fa" href="https://polygonscan.com/" rel="nofollow noopener" target="_blank">PolygonScan explorer</a></li></ul>
-    </section>
-    <footer class="ce4cff1">
-      <span class="c019e03">Transfer guide</span>
-      <div>Updated Oct 09, 2026</div>
-    </footer>
-  </div>
-  <script>
-    (() => {
-      const amount = document.getElementById('amount');
-      const help = document.getElementById('amount-help');
-      const received = document.getElementById('received');
-      const fee = document.getElementById('fee');
-      const time = document.getElementById('time');
-      const format = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-      let pending;
-      function calculate() {
-        const raw = amount.value.trim();
-        const validSyntax = /^(?:\d+(?:[.,]\d{1,2})?|[.,]\d{1,2})$/.test(raw);
-        const value = validSyntax ? Number(raw.replace(',', '.')) : NaN;
-        const valid = Number.isFinite(value) && value >= 1 && value <= 1000000;
-        amount.setAttribute('aria-invalid', String(!valid));
-        if (!valid) {
-          received.textContent = '—';
-          fee.textContent = '—';
-          time.textContent = '—';
-          help.textContent = raw ? 'Use 1–1,000,000 with up to two decimals and no thousands separators.' : 'Enter an amount to calculate your estimate.';
-          return;
-        }
-        const cents = Math.round(value * 100);
-        const feeCents = Math.round(cents * 6 / 1000) + 50;
-        const extraMinutes = Math.min(10, Math.ceil(value / 1000));
-        received.textContent = format.format((cents - feeCents) / 100);
-        fee.textContent = format.format(feeCents / 100);
-        time.textContent = `${2 + extraMinutes}–${6 + extraMinutes} min`;
-        help.textContent = 'Enter an amount from 1 to 1,000,000 units.';
-      }
-      amount.addEventListener('input', () => {
-        clearTimeout(pending);
-        pending = setTimeout(calculate, 180);
-      });
-      amount.addEventListener('blur', () => {
-        clearTimeout(pending);
-        calculate();
-      });
-      calculate();
-    })();
-  </script>
+<a class="c29beb2" href="#content">Skip to content</a>
+<div class="cadafe5">
+<nav class="cc02e73" aria-label="Primary navigation">
+<div class="cb3a5a1"><span class="c4521fb" aria-hidden="true"><svg class="c7836e3" viewBox="0 0 24 24"><path d="M5 8h14m-4-4 4 4-4 4M19 16H5m4-4-4 4 4 4"/></svg></span>Transfer guide</div>
+<div class="c54d719"><a class="ca3e522" href="#key-facts">Key facts</a><a class="ca3e522" href="#sources">Sources</a><a class="ce59e77" href="dashboard/">Open app <span aria-hidden="true">↗</span></a></div>
+</nav>
+<div class="cc8886e"><nav class="cc7ce89" aria-label="Breadcrumb"><a href="dashboard/">Home</a> <span>/</span> <span>Bridges</span> <span>/</span> <span>Bridge to Polygon</span></nav></div>
+<header class="c977313">
+<div class="cef6ea3">
+<p class="c935041">Plan your transfer</p>
+<h1>Bridge to <em>Polygon</em>.</h1>
+<p class="cb0629b">A <strong>Bridge to Polygon</strong> transfer runs on checkpoints, not a simple message between chains: your Ethereum deposit is picked up by Polygon's heimdall validator set and bor block producers, minted on Polygon PoS within minutes, and only settled back to Ethereum once a checkpoint closes. POL, the token that replaced MATIC, covers gas the moment you land, and the whole process happens while your assets stay under the keys already in your wallet.</p>
+<a class="cf01d94" href="dashboard/">Start a transfer <svg class="c7836e3" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+</div>
+<aside class="c4bd701" aria-labelledby="estimator-title">
+<div class="cca3752"><h2 id="estimator-title">Transfer estimator</h2><span class="cdf474a">Fee &amp; time</span></div>
+<div class="ca4ed8a">
+<div class="c609bf4">
+<div class="c4befd6"><span class="c73eda6">From</span><div class="c5567bb"><img src="assets/tokens/eth.svg" alt="Ethereum" width="28" height="28"></div></div>
+<span class="cbdac93" aria-hidden="true"><svg class="c7836e3" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></span>
+<div class="c4befd6"><span class="c73eda6">To</span><div class="c5567bb"><img src="assets/tokens/polygon.svg" alt="Polygon" width="28" height="28"></div></div>
+</div>
+<label class="c182225" for="amount">Amount to send</label>
+<div class="cbac7e7"><input id="amount" type="text" inputmode="decimal" value="1000" maxlength="20" autocomplete="off" spellcheck="false" aria-describedby="amount-help amount-error"><span class="cfc7c60">units</span></div>
+<p class="ccc4b4b" id="amount-help">Enter 1–1,000,000 units. Use a point or comma for decimals.</p>
+<p class="c317391" id="amount-error" role="status" hidden></p>
+<div class="c043495">
+<div class="c839350"><label class="c182225" for="speed">Transfer speed</label><div class="c283e53"><select id="speed" class="c011845"><option value="std">Standard</option><option value="fast">Fast</option><option value="prio">Priority</option></select></div></div>
+<div class="c839350"><label class="c182225" for="load">Network load</label><div class="c283e53"><select id="load" class="c011845"><option value="normal">Normal</option><option value="busy">Busy</option></select></div></div>
+</div>
+<div class="c19d49c" aria-live="polite" aria-atomic="true">
+<span class="cee8524">Estimated amount after fee</span>
+<div class="c3b5d03"><output id="net" for="amount">—</output> <span class="cec4e92">units</span></div>
+<dl class="c45586c"><div><dt>Estimated fee</dt><dd><output id="fee" for="amount">—</output></dd></div><div><dt>Estimated time</dt><dd><output id="time" for="amount">—</output></dd></div></dl>
+</div>
+<a class="cf01d94" href="dashboard/">Continue to dashboard <svg class="c7836e3" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+<details class="cf739b1"><summary>How the estimate is calculated</summary><p>Fee = 0.50 units + 0.25% of the amount, rounded to two decimals. The remaining amount is the input minus the fee. Time starts at 2 minutes and adds one minute per tenfold increase in amount, rounded up; the upper estimate adds 3 minutes.</p></details>
+<noscript><p class="ccc4b4b">Enable JavaScript to calculate the fee and time from your amount.</p></noscript>
+</div>
+</aside>
+</header>
+<section class="cc23b41" id="key-facts" aria-labelledby="facts-title"><h2 class="c13305c" id="facts-title">Key facts</h2><div class="c3bec37"><table class="cd74648"><tbody><tr><th scope="row">Consensus layer</th><td>Heimdall validators + Bor block producers</td></tr>
+<tr><th scope="row">Checkpoint interval</th><td>Roughly every ~30 minutes, batched</td></tr>
+<tr><th scope="row">Gas token</th><td>POL (formerly MATIC)</td></tr>
+<tr><th scope="row">Entry speed</th><td>Minutes, once Ethereum confirms</td></tr>
+<tr><th scope="row">Exit speed</th><td>Tied to the next checkpoint, not instant</td></tr>
+<tr><th scope="row">Key custody</th><td>Stays in your wallet throughout</td></tr></tbody></table></div></section>
+<main class="ceacb41" id="content" tabindex="-1">
+<section class="c09570f"><h2 class="c27ebb4">What Happens When You Bridge to Polygon</h2><div class="c8931cd"><strong>Polygon runs its own consensus on top of Ethereum, so a Bridge to Polygon deposit is really two systems handing off state to each other.</strong> Your asset is locked in a contract on Ethereum, and Polygon's own chain mints the matching balance on your address almost immediately. Going the other direction is slower by design: Bor produces the blocks that record your exit, but that exit only becomes final on Ethereum once Heimdall rolls it into the next checkpoint. That split — fast entry, checkpoint-gated exit — is the defining shape of this bridge.<h3>Heimdall and Bor: Polygon's Two-Layer Design</h3>Bor is the layer that actually produces Polygon's blocks at high speed, giving the network the throughput that makes everyday fees trivial. Heimdall is a separate proof-of-stake layer made of staked validators whose job is to watch Bor, agree on its state, and periodically commit a summary of it to Ethereum. Neither layer alone secures the chain; it's the pairing that lets Polygon move fast without losing a link to Ethereum's security.<h3>Why Checkpoints Anchor Polygon to Ethereum</h3>A checkpoint is a compressed root hash of a batch of Polygon blocks, submitted to a contract on Ethereum by Heimdall validators. Once that root is on Ethereum, everything inside it — including your withdrawal — can be proven and finalized there. This is why a Bridge to Polygon exit cannot be rushed by paying more gas: it is waiting on the next scheduled checkpoint, not on block space.</div></section>
+<section class="c09570f"><h2 class="c27ebb4">POL Is the Gas Token Once You Bridge to Polygon</h2><div class="c8931cd">Nothing you bring across pays for transactions on Polygon itself — that still takes POL, the asset that fully replaced MATIC as the network's native gas and staking token. If you only carry ETH or USDC through a Bridge to Polygon deposit, your first job on arrival is getting a small amount of POL, either by bringing some along or swapping a sliver of what you brought on a Polygon-native exchange. Validators are paid in POL, staking runs on POL, and every contract call you make afterward is priced in it, so treat it as the one asset you never want to run out of. The migration from MATIC was a token swap, not a rebrand of the same contract — older MATIC balances convert to POL at a fixed ratio, and new deposits, new gas payments and new staking positions on Polygon now reference POL directly rather than the legacy ticker.</div></section>
+<section class="c09570f"><h2 class="c27ebb4">Choosing How You Bridge to Polygon: Three Routes</h2><div class="c8931cd">Polygon isn't served by a single bridge anymore — PoS, zkEVM and liquidity-based routes all reach it, and picking the wrong one for your destination is the most common mistake. Match the route to where you're actually going before you match it to price.<ul><li>Use the PoS bridge for ETH, stablecoins and most ERC-20 tokens when the destination is Polygon PoS and you want the canonical, most liquid wrapped asset.</li><li>Use the zkEVM bridge specifically when you're headed to Polygon zkEVM — it is a separate network from Polygon PoS, and assets do not move between the two automatically.</li><li>Route through an AggLayer-connected path when you want a transfer that can settle across several Polygon chains without re-bridging at each hop.</li><li>Pick a third-party liquidity bridge only when a checkpoint-length wait is unacceptable, and only after checking who actually backs that liquidity.</li><li>Confirm POL is available at the far end regardless of route — none of these deliver gas money along with the asset.</li></ul></div></section>
+<section class="c09570f"><h2 class="c27ebb4">PoS, zkEVM and Third-Party: How the Routes Compare</h2><div class="c8931cd">Laid side by side, the trade-off between Polygon's routes is mostly a trade between how official the asset arrives and how long you're willing to wait for it.<table><thead><tr><th>Route</th><th>Exit Time</th><th>Best For</th></tr></thead><tbody><tr><td>PoS bridge</td><td>Checkpoint-bound, hours</td><td>Canonical assets, larger transfers</td></tr><tr><td>zkEVM bridge</td><td>Validity-proof dependent</td><td>Moving to/from Polygon zkEVM</td></tr><tr><td>Third-party liquidity</td><td>Minutes, fronted by a market maker</td><td>Urgent exits, smaller amounts</td></tr></tbody></table><h3>Plasma Exits Are Being Phased Out</h3>Polygon's original Plasma bridge, used for a handful of early assets, relied on a challenge-period exit model rather than checkpoints and is being wound down in favor of the PoS bridge. If you're holding an asset that still references Plasma, moving it onto the PoS path is the more future-proof choice.</div></section>
+<section class="c09570f"><h2 class="c27ebb4">Checkpoints and Exit Windows After You Bridge to Polygon</h2><div class="c8931cd">The gap between initiating a withdrawal and actually holding the asset on Ethereum again is the part of a Bridge to Polygon round trip that catches people off guard, because nothing about it is broken — it's simply waiting on a scheduled event rather than a transaction.<h3>Why the Checkpoint Window Exists</h3>Submitting every Polygon block individually to Ethereum would be slow and expensive, which defeats the point of a sidechain. Batching thousands of blocks into one checkpoint keeps Ethereum-side costs low for everyone, at the price of withdrawals finalizing in batches rather than the instant they're requested.<h3>Fast-Exit Alternatives</h3>When a checkpoint wait doesn't fit your timeline, a liquidity-backed exit lets a market maker pay you on Ethereum immediately and collect the checkpointed funds later themselves. That convenience is priced into the spread they charge, so it's worth comparing against simply waiting out the window.</div></section>
+<section class="c09570f"><h2 class="c27ebb4">What to Do on Polygon After You Bridge</h2><div class="c8931cd">Once assets land, Polygon's draw is that you can actually use them without rationing gas. QuickSwap handles most swaps natively on the network, Aave's Polygon deployment covers lending and borrowing at the same sub-cent cost as everything else, and the broader ecosystem of games and NFT marketplaces runs on the same low fee floor. A Bridge to Polygon deposit is only the setup step — the high transaction throughput is what makes using those apps repeatedly, rather than once, actually practical. Stablecoins bridged in this way tend to sit in Aave earning yield or in a QuickSwap liquidity pool rather than idle, precisely because the cost of moving them around again is small enough not to erode the return, something that isn't true for the same strategy run directly on Ethereum.</div></section>
+<section class="c09570f"><h2 class="c27ebb4">Keeping Custody When You Bridge to Polygon</h2><div class="c8931cd">Every step of a Bridge to Polygon transfer — the deposit, the checkpoint wait, the withdrawal — happens through transactions you sign yourself, with the asset sitting in your own address the entire time rather than in a custodian's ledger.<h3>Allowance Hygiene on Polygon</h3>Each contract you approve on Polygon, from the bridge itself to a DEX or lending market, gets permission to move a specific token up to whatever limit you granted. Checking and trimming those allowances periodically keeps old approvals from sitting around as unnecessary exposure long after you stopped using the app.<h3>Recognizing Phishing Aimed at Bridge Users</h3>Fake bridge interfaces and fake support channels tend to target people mid-transfer, right when they're anxious about a checkpoint delay. Genuine Polygon infrastructure never asks for your recovery phrase at any stage, and a slow withdrawal is a reason to check the checkpoint schedule, not a reason to hand your seed to someone offering to 'speed it up.' Bookmarking the official bridge address and typing it from memory rather than following a link in a message or search ad removes most of the opportunity for a lookalike page to intercept a transfer.</div></section>
+<details class="c496872"><summary class="c512286">What are Heimdall and Bor on Polygon?</summary><div class="c0b5df5">Bor is the layer that produces Polygon's blocks quickly; Heimdall is the proof-of-stake validator layer that agrees on Bor's state and checkpoints it to Ethereum. Together they let Polygon run fast while staying anchored to Ethereum's security.</div></details>
+<details class="c496872"><summary class="c512286">Why does a Polygon withdrawal take longer than a deposit?</summary><div class="c0b5df5">Deposits only need Ethereum to confirm your transaction. Withdrawals wait for Heimdall to bundle Polygon blocks into a checkpoint and submit it to Ethereum, which runs on a fixed schedule rather than per-transaction.</div></details>
+<details class="c496872"><summary class="c512286">Is Polygon PoS the same network as Polygon zkEVM?</summary><div class="c0b5df5">No. They are separate networks with separate bridges. Moving to Polygon zkEVM requires the zkEVM bridge, not the PoS bridge, and assets on one do not appear automatically on the other.</div></details>
+<details class="c496872"><summary class="c512286">What is POL and do I need it?</summary><div class="c0b5df5">POL is the token that replaced MATIC as Polygon's gas and staking asset. You need a small balance of it to pay for any transaction on Polygon, regardless of which asset you bridged in.</div></details>
+<details class="c496872"><summary class="c512286">Is a third-party bridge to Polygon safe to use?</summary><div class="c0b5df5">It can be, but it relies on that provider's own liquidity and trust assumptions rather than Polygon's checkpoint-secured canonical path. It's a reasonable trade for speed on smaller, time-sensitive transfers, less so for large ones.</div></details>
+<details class="c496872"><summary class="c512286">What happened to Polygon's Plasma bridge?</summary><div class="c0b5df5">Plasma was Polygon's original exit mechanism for a small set of assets and is being phased out in favor of the checkpoint-based PoS bridge, which now covers the overwhelming majority of transfers.</div></details>
+<details class="c496872"><summary class="c512286">Do I keep custody of my assets while bridging?</summary><div class="c0b5df5">Yes. Every step — deposit, checkpoint wait and withdrawal — is a transaction signed from your own wallet, and the asset stays at your address rather than passing through a custodian.</div></details>
+</main>
+<section class="c30ef9d" id="sources" aria-labelledby="sources-title"><h2 class="c13305c" id="sources-title">Sources</h2><ul class="caa3989"><li><a class="c9abc37" href="https://docs.polygon.technology/" rel="nofollow noopener" target="_blank">Polygon documentation</a></li>
+<li><a class="c9abc37" href="https://en.wikipedia.org/wiki/Polygon_(blockchain)" rel="nofollow noopener" target="_blank">Polygon on Wikipedia</a></li>
+<li><a class="c9abc37" href="https://polygonscan.com/" rel="nofollow noopener" target="_blank">PolygonScan explorer</a></li></ul></section>
+<footer class="c103752"><p>Updated Oct 09, 2026</p><a href="#key-facts">Back to key facts <span aria-hidden="true">↑</span></a></footer>
+</div>
+<script>
+(() => {
+  const amount = document.getElementById('amount');
+  const net = document.getElementById('net');
+  const fee = document.getElementById('fee');
+  const time = document.getElementById('time');
+  const error = document.getElementById('amount-error');
+  const speed = document.getElementById('speed');
+  const load = document.getElementById('load');
+  const SPEED = { std: [1, 1], fast: [1.6, 0.5], prio: [2.4, 0.3] };
+  const LOAD = { normal: 0, busy: 3 };
+  const format = new Intl.NumberFormat('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  let timer;
+  function update() {
+    const raw = amount.value.trim();
+    const validFormat = /^(?:\d+(?:[.,]\d{1,2})?|[.,]\d{1,2})$/.test(raw);
+    const value = Number(raw.replace(',', '.'));
+    if (!validFormat || !Number.isFinite(value) || value < 1 || value > 1000000) {
+      amount.setAttribute('aria-invalid', 'true');
+      error.textContent = raw === '' ? 'Enter an amount to calculate your estimate.' : 'Enter a number from 1 to 1,000,000 with up to two decimal places.';
+      error.hidden = false;
+      net.textContent = '—';
+      fee.textContent = '—';
+      time.textContent = '—';
+      return;
+    }
+    amount.removeAttribute('aria-invalid');
+    error.hidden = true;
+    error.textContent = '';
+    const [feeMul, timeMul] = SPEED[speed.value] || SPEED.std;
+    const extra = LOAD[load.value] || 0;
+    const amountCents = Math.round(value * 100);
+    const feeCents = Math.round((50 + amountCents * 0.0025) * feeMul);
+    const base = Math.max(1, Math.round((2 + Math.ceil(Math.log10(value))) * timeMul));
+    const minutes = base + extra;
+    net.textContent = format.format((amountCents - feeCents) / 100);
+    fee.textContent = format.format(feeCents / 100) + ' units';
+    time.textContent = minutes + '–' + (minutes + 3) + ' min';
+  }
+  amount.addEventListener('input', () => {
+    clearTimeout(timer);
+    timer = setTimeout(update, 180);
+  });
+  amount.addEventListener('change', () => {
+    clearTimeout(timer);
+    update();
+  });
+  speed.addEventListener('change', update);
+  load.addEventListener('change', update);
+  update();
+})();
+</script>
 </body>
 </html>
