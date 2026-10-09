@@ -1,102 +1,270 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bridge to Polygon — Move ETH & Tokens to Polygon</title>
-<meta name="description" content="Bridge to Polygon to move ETH, USDC and tokens from Ethereum to the Polygon network. See the route, fee and time before you sign, and keep your own keys.">
-<link rel="canonical" href="https://bridge-to-polygon.github.io/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bridge to Polygon">
-<meta property="og:url" content="https://bridge-to-polygon.github.io/">
-<meta property="og:image" content="https://bridge-to-polygon.github.io/og.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bridge to Polygon">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bridge to Polygon — Move ETH & Tokens to Polygon</title>
+  <meta name="description" content="Bridge to Polygon to move ETH, USDC and tokens from Ethereum to the Polygon network. See the route, fee and time before you sign, and keep your own keys.">
+  <link rel="canonical" href="https://bridge-to-polygon.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bridge to Polygon">
+  <meta property="og:description" content="Bridge to Polygon to move ETH, USDC and tokens from Ethereum to the Polygon network. See the route, fee and time before you sign, and keep your own keys.">
+  <meta property="og:url" content="https://bridge-to-polygon.github.io/">
+  <meta property="og:image" content="https://bridge-to-polygon.github.io/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bridge to Polygon">
+  <meta name="twitter:description" content="Bridge to Polygon to move ETH, USDC and tokens from Ethereum to the Polygon network. See the route, fee and time before you sign, and keep your own keys.">
+  <meta name="twitter:image" content="https://bridge-to-polygon.github.io/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://bridge-to-polygon.github.io/#website", "url": "https://bridge-to-polygon.github.io/", "name": "Bridge to Polygon — Move ETH & Tokens to Polygon"}, {"@type": "WebPage", "@id": "https://bridge-to-polygon.github.io/#webpage", "url": "https://bridge-to-polygon.github.io/", "name": "Bridge to Polygon — Move ETH & Tokens to Polygon", "isPartOf": {"@id": "https://bridge-to-polygon.github.io/#website"}, "description": "Bridge to Polygon to move ETH, USDC and tokens from Ethereum to the Polygon network. See the route, fee and time before you sign, and keep your own keys.", "datePublished": "2026-10-09", "dateModified": "2026-10-09"}, {"@type": "SoftwareApplication", "name": "Bridge to Polygon", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bridge-to-polygon.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Bridges"}, {"@type": "ListItem", "position": 3, "name": "Bridge to Polygon"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need POL to use assets on Polygon?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You pay Ethereum gas to bridge, and you need a little POL on Polygon to transact once your assets arrive."}}, {"@type": "Question", "name": "How long does it take to bridge to Polygon?", "acceptedAnswer": {"@type": "Answer", "text": "Usually minutes, after your Ethereum transaction gets enough confirmations; busy periods take longer."}}, {"@type": "Question", "name": "Which assets can I bridge to Polygon?", "acceptedAnswer": {"@type": "Answer", "text": "ETH, USDC, USDT, WBTC and other liquid tokens, depending on supported routes. The interface shows what is reachable and the amount received."}}, {"@type": "Question", "name": "Do I need an account to bridge to Polygon?", "acceptedAnswer": {"@type": "Answer", "text": "No. You connect a self-custody wallet and bridge on-chain, with no sign-up and no custody."}}, {"@type": "Question", "name": "What happens if my transfer fails?", "acceptedAnswer": {"@type": "Answer", "text": "A failed Ethereum transaction reverts and you keep your assets, though the gas for the attempt is spent."}}]}]}</script>
-<style>
-:root{--bg:#FFFDFB;--surface:#FFFFFF;--text:#17141A;--muted:#6B6570;--accent:#8247E5;--accent-ink:#FFFFFF;--radius:14px;--display:"Sora";--body:"Inter"}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font:16px/1.65 var(--body),system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-.cc70e78{max-width:1040px;margin:0 auto;padding:0 20px}
-a{color:inherit;text-decoration:none}
-.cc57248{border:0;border-top:1px solid color-mix(in srgb,var(--text) 10%,transparent);margin:0}
-.c1c779d{display:flex;align-items:center;justify-content:space-between;height:68px}
-.c2b371f{font:700 18px var(--display),sans-serif}
-.c85ffbe{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--accent-ink);font:600 15px var(--body),sans-serif;border:0;border-radius:calc(var(--radius) * .7);padding:12px 22px;cursor:pointer}
-.c85ffbe.c0e2215{background:transparent;color:var(--text);border:1px solid color-mix(in srgb,var(--text) 18%,transparent)}
-.c6d9796{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:13px;padding:18px 0 6px;flex-wrap:wrap}
-.c6d9796 a:hover{color:var(--text)}
-.ca845df{padding:26px 0 30px}
-.cc3c000{display:inline-block;font:600 12px var(--body),sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
-h1{font:700 clamp(34px,5vw,56px)/1.05 var(--display),sans-serif;letter-spacing:-.03em;max-width:16ch}
-h1 em{font-style:normal;color:var(--accent)}
-.cf0c612{color:var(--muted);font-size:clamp(17px,1.7vw,20px);margin:18px 0 24px;max-width:60ch}
-.ce9c19e{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-.c1b5283{display:flex;gap:10px;align-items:center;margin-top:22px;color:var(--muted);font-size:14px}
-.c1b5283 img{vertical-align:middle}
-/* таблица фактов */
-.c97b32c{width:100%;border-collapse:collapse;margin:8px 0 8px;background:var(--surface);border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:var(--radius);overflow:hidden}
-.c97b32c th,.c97b32c td{text-align:left;padding:13px 18px;font-size:15px;border-top:1px solid color-mix(in srgb,var(--text) 8%,transparent)}
-.c97b32c tr:first-child th,.c97b32c tr:first-child td{border-top:0}
-.c97b32c th{color:var(--muted);font-weight:600;width:42%}
-.c0e61ec{padding:6px 0 10px}
-.c0e61ec h2{font:600 13px var(--body),sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
-/* контент */
-.c65996e{padding:18px 0 10px;max-width:760px}
-.c1078a0{padding:24px 0;border-top:1px solid color-mix(in srgb,var(--text) 9%,transparent)}
-.cb735e4{font:700 clamp(21px,2.4vw,28px) var(--display),sans-serif;letter-spacing:-.02em;margin-bottom:10px}
-.ccf6f51{color:var(--muted)}
-.ccf6f51 strong{color:var(--text)}
-.ca44408{border-top:1px solid color-mix(in srgb,var(--text) 9%,transparent);padding:4px 0}
-.c5e94ea{font:600 17px var(--display),sans-serif;cursor:pointer;padding:15px 0;list-style:none}
-.c1f47b6{color:var(--muted);padding:0 0 15px}
-.ce90e39{padding:22px 0}
-.ce90e39 h2{font:600 13px var(--body),sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
-.cdb9ed5{list-style:none;display:flex;flex-direction:column;gap:7px}
-.c3558fa{color:var(--accent)}.c3558fa:hover{text-decoration:underline}
-footer{border-top:1px solid color-mix(in srgb,var(--text) 9%,transparent);padding:26px 0;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-</style>
+  <style>
+    :root{--bg:#FFFDFB;--surface:#FFFFFF;--text:#17141A;--muted:#6B6570;--accent:#8247E5;--accent-ink:#FFFFFF;--radius:14px;--display:"Sora";--body:"Inter"}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:2rem}
+    body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.7 var(--body);-webkit-font-smoothing:antialiased}
+    a{color:var(--accent);text-underline-offset:.22em}
+    a:hover{text-decoration-thickness:2px}
+    :focus-visible{outline:3px solid var(--accent);outline-offset:5px}
+    ::selection{background:var(--accent);color:var(--accent-ink)}
+    h1,h2,h3,p{margin:0}
+    h1,h2,h3{font-family:var(--display);text-wrap:balance}
+    svg{display:block;flex-shrink:0}
+    img{max-width:100%;height:auto}
+    .ccc0312{width:min(1180px,calc(100% - 64px));margin-inline:auto}
+    .ced9f75{position:absolute;top:1rem;left:1rem;z-index:10;transform:translateY(-200%);padding:.7rem 1rem;background:var(--surface);border-radius:var(--radius)}
+    .ced9f75:focus{transform:translateY(0)}
+    .c1c779d{min-height:96px;display:flex;align-items:center;justify-content:space-between;gap:2rem;border-bottom:1px solid color-mix(in srgb,var(--text) 10%,transparent)}
+    .c2b371f{display:inline-flex;align-items:center;gap:.7rem;color:var(--text);font:600 1.2rem/1 var(--display);letter-spacing:-.04em;text-decoration:none}
+    .c15b4ef{display:grid;place-items:center;width:38px;height:38px;background:var(--accent);color:var(--accent-ink);border-radius:var(--radius)}
+    .c2be901{display:flex;align-items:center;gap:1.8rem}
+    .c2be901>a{font-size:.88rem;font-weight:600;color:var(--text);text-decoration:none}
+    .c2be901>a:hover{color:var(--accent)}
+    .c2be901 .c55181b{padding:.65rem 1rem;border:1px solid color-mix(in srgb,var(--text) 18%,transparent);border-radius:var(--radius)}
+    .cf048ef{padding-top:1.6rem;font-size:.8rem;color:var(--muted)}
+    .c6d9796{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;color:var(--muted)}
+    ol.c6d9796,ul.c6d9796,.c6d9796 ol,.c6d9796 ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.5rem}
+    .c6d9796 a{color:var(--muted);text-decoration:none}
+    .c6d9796 a:hover{color:var(--accent)}
+    .c6d9796 [aria-current]{color:var(--text)}
+    .ca845df{position:relative;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);align-items:center;gap:clamp(2rem,6vw,5.5rem);padding-block:4.5rem 5.5rem}
+    .cc3c000{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.35rem;color:var(--accent);font-size:.86rem;font-weight:600}
+    .cc3c000::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 10%,transparent)}
+    h1{font-size:clamp(2.5rem,4.8vw,4.7rem);line-height:1.06;letter-spacing:-.055em;overflow-wrap:anywhere}
+    h1 em{color:var(--accent);font-style:normal}
+    .cf0c612{margin-top:1.5rem;max-width:49ch;font-size:1.06rem;line-height:1.85;color:var(--muted)}
+    .ce9c19e{display:inline-flex;justify-content:center;align-items:center;gap:1.15rem;min-height:54px;padding:.9rem 1.4rem;border:1px solid color-mix(in srgb,var(--accent-ink) 12%,transparent);border-radius:var(--radius);background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 88%,var(--surface)),var(--accent));box-shadow:0 8px 20px color-mix(in srgb,var(--accent) 18%,transparent);color:var(--accent-ink);font:600 .95rem/1.4 var(--body);text-decoration:none;transition:transform .2s,box-shadow .2s}
+    .ce9c19e:hover{transform:translateY(-2px);box-shadow:0 12px 26px color-mix(in srgb,var(--accent) 26%,transparent)}
+    .c10313e>.ce9c19e{margin-top:2rem}
+    .cea03ea{margin-top:1.1rem;color:var(--muted);font-size:.8rem}
+    .c9f5b4a{position:relative;isolation:isolate;min-width:0;padding:1.7rem;background:var(--surface);border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:calc(var(--radius) * 1.5);box-shadow:0 28px 70px -20px color-mix(in srgb,var(--text) 19%,transparent),0 3px 10px color-mix(in srgb,var(--text) 4%,transparent)}
+    .c9f5b4a::before{content:"";position:absolute;inset:-28px;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 80% 20%,color-mix(in srgb,var(--accent) 14%,transparent),transparent 68%);border-radius:calc(var(--radius) * 2)}
+    .c5aec01{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1.5rem}
+    .c5aec01 h2{font-size:1.15rem;letter-spacing:-.035em}
+    .c128e16{padding:.25rem .65rem;border-radius:var(--radius);background:color-mix(in srgb,var(--accent) 10%,var(--surface));color:var(--accent);font-size:.72rem;font-weight:600}
+    .cfcd723{display:grid;grid-template-columns:minmax(0,1fr) 38px minmax(0,1fr);align-items:center;gap:.6rem;padding:1rem;border:1px solid color-mix(in srgb,var(--text) 9%,transparent);border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 65%,var(--surface))}
+    .ca801a1{min-width:0;display:flex;align-items:center;gap:.7rem}
+    .ca801a1:last-child{justify-content:flex-end}
+    .cb082a9{font-size:.76rem;color:var(--muted)}
+    .ccffd02{min-width:0;display:flex;align-items:center;justify-content:center;max-width:100px;min-height:38px;overflow-wrap:anywhere}
+    .ccffd02 img,.ccffd02 svg{max-width:100%;max-height:38px;object-fit:contain}
+    .c813324{display:grid;place-items:center;width:34px;height:34px;border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:50%;color:var(--accent);background:var(--surface)}
+    .c36e4b0{margin-top:1.5rem}
+    .cb03cef{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:.55rem}
+    .cb03cef label{font-size:.85rem;font-weight:600}
+    .ccee61b{font-size:.74rem;color:var(--muted)}
+    .c79f3e3{display:flex;align-items:center;gap:.8rem;padding:.85rem 1rem;border:1px solid color-mix(in srgb,var(--text) 20%,transparent);border-radius:var(--radius);background:var(--bg);transition:border-color .2s,box-shadow .2s}
+    .c79f3e3:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 12%,transparent)}
+    .c79f3e3:has([aria-invalid="true"]){border-color:var(--accent)}
+    .c79f3e3 input{width:100%;min-width:0;padding:0;border:0;outline:none;background:var(--bg);color:var(--text);font:500 2rem/1.25 var(--display);letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+    .c79f3e3 input::placeholder{color:var(--muted)}
+    .c79f3e3>span{font-size:.8rem;color:var(--muted)}
+    .c362261{min-height:1.4em;margin-top:.5rem;font-size:.73rem;color:var(--muted)}
+    .c750d18{margin-top:1.3rem;padding:1.25rem;border:1px solid color-mix(in srgb,var(--accent) 17%,transparent);border-radius:var(--radius);background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 10%,var(--surface)),color-mix(in srgb,var(--accent) 3%,var(--surface)))}
+    .cd453cd{font-size:.8rem;color:var(--muted)}
+    .ce64789{display:flex;align-items:baseline;flex-wrap:wrap;gap:.5rem;margin:.25rem 0 1rem}
+    .ce64789 output{font:600 clamp(1.8rem,3vw,2.6rem)/1.2 var(--display);letter-spacing:-.05em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+    .ce64789 span{font-size:.8rem;color:var(--muted)}
+    .c571978{display:grid;gap:.5rem;margin:0;padding-top:.9rem;border-top:1px solid color-mix(in srgb,var(--accent) 14%,transparent);font-size:.82rem}
+    .c571978>div{display:flex;justify-content:space-between;gap:1rem}
+    .c571978 dt{color:var(--muted)}
+    .c571978 dd{margin:0;font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+    .c9f5b4a>.ce9c19e{width:100%;margin-top:1.2rem}
+    .c45c2a9{margin-top:1rem;font-size:.75rem;color:var(--muted)}
+    .c45c2a9 summary{cursor:pointer;width:fit-content;text-underline-offset:.2em}
+    .c45c2a9 summary:hover{color:var(--accent)}
+    .c45c2a9 p{margin-top:.55rem;line-height:1.7}
+    .c626e5b{padding:2rem 2.25rem;border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:var(--radius);background:var(--surface)}
+    .c4e2f02{font:600 1.4rem/1.3 var(--display);letter-spacing:-.035em;margin-bottom:1.25rem}
+    .c6fa6d1{overflow-x:auto}
+    .c97b32c{width:100%;border-collapse:collapse;text-align:left;font-size:.9rem}
+    .c97b32c caption{text-align:left;margin-bottom:1rem;color:var(--muted)}
+    .c97b32c th,.c97b32c td{padding:1rem 1.2rem;border-bottom:1px solid color-mix(in srgb,var(--text) 8%,transparent);vertical-align:top}
+    .c97b32c th:first-child,.c97b32c td:first-child{padding-left:0}
+    .c97b32c th:last-child,.c97b32c td:last-child{padding-right:0}
+    .c97b32c th{font-weight:600;color:var(--text)}
+    .c97b32c td{color:var(--muted)}
+    .c97b32c tbody tr:last-child>*{border-bottom:0}
+    .c97b32c thead{background:color-mix(in srgb,var(--accent) 5%,var(--surface))}
+    .c3c3c25{max-width:820px;margin:4.5rem auto}
+    .c1078a0{margin-block:0 3rem;padding-bottom:2.75rem;border-bottom:1px solid color-mix(in srgb,var(--text) 10%,transparent)}
+    .cb735e4{margin:0 0 1.2rem;font:600 clamp(1.65rem,3vw,2.25rem)/1.2 var(--display);letter-spacing:-.04em}
+    .ccf6f51{color:var(--muted);line-height:1.9;overflow-wrap:anywhere}
+    .ccf6f51 p+p{margin-top:1.1rem}
+    .ccf6f51 h3{margin:1.8rem 0 .7rem;font-size:1.25rem;line-height:1.4;color:var(--text)}
+    .ccf6f51 strong{color:var(--text);font-weight:600}
+    .ccf6f51 ul,.ccf6f51 ol{padding-left:1.4rem;margin-block:1.2rem}
+    .ccf6f51 li+li{margin-top:.55rem}
+    .ccf6f51 li::marker{color:var(--accent)}
+    .ccf6f51 blockquote{margin:1.5rem 0;padding:1rem 1.4rem;border-left:3px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0;background:color-mix(in srgb,var(--accent) 6%,var(--surface));color:var(--text)}
+    .ca44408{margin-block:.8rem;border:1px solid color-mix(in srgb,var(--text) 12%,transparent);border-radius:var(--radius);background:var(--surface);overflow:hidden}
+    .c5e94ea{position:relative;cursor:pointer;padding:1.2rem 3.3rem 1.2rem 1.35rem;list-style:none;font:500 1.05rem/1.5 var(--display);color:var(--text)}
+    .c5e94ea::-webkit-details-marker{display:none}
+    .c5e94ea::after{content:"+";position:absolute;right:1.35rem;top:1.15rem;color:var(--accent);font-size:1.3rem}
+    .ca44408[open]>.c5e94ea::after{content:"−"}
+    .ca44408[open]{border-color:color-mix(in srgb,var(--accent) 35%,transparent)}
+    .c5e94ea:focus-visible{outline-offset:-5px;border-radius:var(--radius)}
+    .c1f47b6{padding:0 1.35rem 1.35rem;color:var(--muted);font-size:.95rem;line-height:1.85;overflow-wrap:anywhere}
+    .c1f47b6 p+p{margin-top:.8rem}
+    .c5a5621{padding:2rem 2.25rem;border-radius:var(--radius);background:color-mix(in srgb,var(--surface) 75%,var(--bg));border:1px solid color-mix(in srgb,var(--text) 8%,transparent)}
+    .cdb9ed5{margin:0;padding-left:1.2rem;color:var(--muted);font-size:.86rem}
+    .c3558fa{padding:.35rem 0 .35rem .3rem;overflow-wrap:anywhere}
+    .c3558fa::marker{color:var(--muted)}
+    .c3558fa a{color:var(--text);text-decoration-color:color-mix(in srgb,var(--accent) 45%,transparent)}
+    .c3558fa a:hover{color:var(--accent)}
+    .ce4cff1{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-top:3rem;padding-block:1.7rem 2rem;border-top:1px solid color-mix(in srgb,var(--text) 10%,transparent);color:var(--muted);font-size:.78rem}
+    .c019e03{font:600 .95rem/1.4 var(--display);color:var(--text)}
+    @media(min-width:1400px){.ca845df{padding-block:5.5rem 6.5rem}}
+    @media(max-width:900px){.ca845df{gap:2rem;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.c9f5b4a{padding:1.25rem}.cfcd723{padding:.8rem}.ca801a1{flex-direction:column;gap:.25rem}.ca801a1:last-child{flex-direction:column-reverse}h1{font-size:clamp(2.5rem,5.5vw,4rem)}}
+    @media(max-width:720px){.ccc0312{width:calc(100% - 40px)}.c1c779d{min-height:78px;gap:1rem}.c2be901{gap:1rem}.c2be901>.c1b3f6c{display:none}.ca845df{grid-template-columns:minmax(0,1fr);padding-block:2.75rem 3rem;gap:2.5rem}.c10313e{max-width:560px}h1{font-size:clamp(2.6rem,9vw,4rem)}.cf0c612{font-size:1rem}.c9f5b4a{width:100%;max-width:520px;justify-self:center;padding:1.5rem}.ca801a1,.ca801a1:last-child{flex-direction:row}.c626e5b,.c5a5621{padding:1.5rem}.c3c3c25{margin-block:3rem}.c97b32c th,.c97b32c td{padding:.85rem .75rem}.c1078a0{margin-bottom:2rem;padding-bottom:2rem}.ce4cff1{margin-top:2rem}}
+    @media(max-width:380px){.ccc0312{width:calc(100% - 28px)}.c9f5b4a{padding:1rem}.c2b371f{font-size:1.05rem}.c2be901 .c55181b{padding:.55rem .7rem}.ca801a1,.ca801a1:last-child{flex-direction:column}.ca801a1:last-child{flex-direction:column-reverse}.c626e5b,.c5a5621{padding:1.1rem}.c571978{font-size:.76rem}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+  </style>
 </head>
 <body>
-<div class="cc70e78">
-  <nav class="c1c779d"><span class="c2b371f">Bridge to Polygon</span><a class="c85ffbe" href="dashboard/">Open app</a></nav>
-</div>
-<hr class="cc57248">
-<div class="cc70e78">
-  <nav class="c6d9796" aria-label="Breadcrumb"><a href="dashboard/">Home</a> <span>/</span> <span>Bridges</span> <span>/</span> <span>Bridge to Polygon</span></nav>
-  <header class="ca845df">
-    <span class="cc3c000">On-chain · self-custody</span>
-    <h1>Bridge to <em>Polygon</em>.</h1>
-    <p class="cf0c612">To bridge to Polygon you move ETH, USDC and other tokens from Ethereum to the Polygon network, where fees are low and gas is paid in POL. You review the route, the fee and the amount received before you sign, and your funds stay in your own wallet the whole time.</p>
-    <div class="ce9c19e"><a class="c85ffbe" href="dashboard/">Start now</a><a class="c85ffbe c0e2215" href="#faq">Read the details</a></div>
-    <div class="c1b5283"><img src="assets/tokens/eth.svg" alt="Ethereum" width="28" height="28"> <img src="assets/tokens/polygon.svg" alt="Polygon" width="28" height="28"> <span>Supported assets and networks</span></div>
-  </header>
-
-  <section class="c0e61ec"><h2>Key facts</h2><table class="c97b32c"><tbody><tr><th scope="row">From / to</th><td>Ethereum → Polygon</td></tr>
+  <a class="ced9f75" href="#content">Skip to content</a>
+  <div class="ccc0312">
+    <nav class="c1c779d" aria-label="Primary navigation">
+      <a class="c2b371f" href="#" aria-label="Transfer guide home">
+        <span class="c15b4ef" aria-hidden="true"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><path d="M5 19V11a7 7 0 0 1 14 0v8M9 19v-8a3 3 0 0 1 6 0v8" stroke="var(--accent-ink)" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+        Transfer guide
+      </a>
+      <div class="c2be901">
+        <a class="c1b3f6c" href="#key-facts">Key facts</a>
+        <a class="c1b3f6c" href="#sources">Sources</a>
+        <a class="c55181b" href="dashboard/">Open app <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+    <div class="cf048ef"><nav class="c6d9796" aria-label="Breadcrumb"><a href="dashboard/">Home</a> <span>/</span> <span>Bridges</span> <span>/</span> <span>Bridge to Polygon</span></nav></div>
+    <section class="ca845df" aria-labelledby="hero-heading">
+      <div class="c10313e">
+        <span class="cc3c000">Transfer calculator</span>
+        <h1 id="hero-heading">Bridge to <em>Polygon</em>.</h1>
+        <p class="cf0c612">To bridge to Polygon you move ETH, USDC and other tokens from Ethereum to the Polygon network, where fees are low and gas is paid in POL. You review the route, the fee and the amount received before you sign, and your funds stay in your own wallet the whole time.</p>
+        <a class="ce9c19e" href="dashboard/">Open app <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="var(--accent-ink)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <p class="cea03ea">Estimate the fee. See the timing. Plan your transfer.</p>
+      </div>
+      <aside class="c9f5b4a" aria-labelledby="calculator-heading">
+        <div class="c5aec01">
+          <h2 id="calculator-heading">Your transfer, calculated</h2>
+          <span class="c128e16">Estimator</span>
+        </div>
+        <div class="cfcd723" aria-label="Transfer route">
+          <div class="ca801a1"><span class="ccffd02"><img src="assets/tokens/eth.svg" alt="Ethereum" width="28" height="28"></span><span class="cb082a9">From</span></div>
+          <span class="c813324" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="var(--accent)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="ca801a1"><span class="cb082a9">To</span><span class="ccffd02"><img src="assets/tokens/polygon.svg" alt="Polygon" width="28" height="28"></span></div>
+        </div>
+        <div class="c36e4b0">
+          <div class="cb03cef"><label for="amount">You send</label><span class="ccee61b">Transfer amount</span></div>
+          <div class="c79f3e3"><input id="amount" type="text" inputmode="decimal" value="1000" autocomplete="off" spellcheck="false" maxlength="24" aria-describedby="amount-help" aria-invalid="false"><span>units</span></div>
+          <p id="amount-help" class="c362261">Enter an amount from 1 to 1,000,000 units.</p>
+        </div>
+        <div class="c750d18" aria-live="polite" aria-atomic="true">
+          <p class="cd453cd">Estimated amount received</p>
+          <div class="ce64789"><output id="received" for="amount">993.50</output><span>units</span></div>
+          <dl class="c571978">
+            <div><dt>Estimated fee</dt><dd><output id="fee" for="amount">6.50</output> units</dd></div>
+            <div><dt>Estimated time</dt><dd><output id="time" for="amount">3–7 min</output></dd></div>
+          </dl>
+        </div>
+        <a class="ce9c19e" href="dashboard/">Continue to app <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="var(--accent-ink)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <details class="c45c2a9">
+          <summary>How the estimate works</summary>
+          <p>The fee is 0.6% of the amount plus 0.50 units, rounded to two decimals. The received amount is the input minus this fee, with a 1:1 unit conversion. Timing is 2–6 minutes plus one minute for each 1,000 units, rounded up and capped at 10 extra minutes.</p>
+        </details>
+        <noscript><p class="c362261">Enable JavaScript to calculate a different amount.</p></noscript>
+      </aside>
+    </section>
+    <section id="key-facts" class="c626e5b" aria-labelledby="facts-heading">
+      <h2 id="facts-heading" class="c4e2f02">Key facts</h2>
+      <div class="c6fa6d1"><table class="c97b32c"><tbody><tr><th scope="row">From / to</th><td>Ethereum → Polygon</td></tr>
 <tr><th scope="row">Assets</th><td>ETH, USDC, USDT, WBTC and more</td></tr>
 <tr><th scope="row">Gas on Polygon</th><td>Paid in POL</td></tr>
 <tr><th scope="row">Typical time</th><td>Minutes, after source confirmations</td></tr>
-<tr><th scope="row">Custody</th><td>Self-custody — you hold your keys</td></tr></tbody></table></section>
-
-  <main class="c65996e" id="faq">
-    <section class="c1078a0"><h2 class="cb735e4">How to bridge to Polygon</h2><div class="ccf6f51"><strong>Connect a wallet, choose the asset and amount, and confirm.</strong> To bridge to Polygon you select the token on Ethereum, review the route, the fee and the amount that will arrive, then approve and sign. Assets appear on Polygon once the source transaction confirms, and nothing moves until you sign.</div></section>
+<tr><th scope="row">Custody</th><td>Self-custody — you hold your keys</td></tr></tbody></table></div>
+    </section>
+    <main id="content" class="c3c3c25">
+      <section class="c1078a0"><h2 class="cb735e4">How to bridge to Polygon</h2><div class="ccf6f51"><strong>Connect a wallet, choose the asset and amount, and confirm.</strong> To bridge to Polygon you select the token on Ethereum, review the route, the fee and the amount that will arrive, then approve and sign. Assets appear on Polygon once the source transaction confirms, and nothing moves until you sign.</div></section>
 <section class="c1078a0"><h2 class="cb735e4">Fees and time to bridge to Polygon</h2><div class="ccf6f51">The cost to bridge to Polygon is the Ethereum gas to send plus any protocol fee; transacting on Polygon afterwards is cheap because POL gas is low. Deposits settle after Ethereum confirmations, usually minutes. The quote shows the amount received before you commit.</div></section>
 <section class="c1078a0"><h2 class="cb735e4">What you can bridge to Polygon</h2><div class="ccf6f51">You can bridge ETH, USDC, USDT, WBTC and other liquid assets to Polygon, where they work across its large DeFi ecosystem — DEXs, lending, gaming and liquidity. Availability depends on supported routes; the interface lists reachable assets and the expected amount for each.</div></section>
 <section class="c1078a0"><h2 class="cb735e4">Is it safe to bridge to Polygon?</h2><div class="ccf6f51">A self-custody bridge keeps your keys in your wallet. Confirm the destination token's contract address, the amount received and the approval you grant, prefer a limited approval, and keep a little POL for gas. Treat any seed-phrase request as fraud.</div></section>
 <section class="c1078a0"><h2 class="cb735e4">Native Polygon bridge vs third-party routes</h2><div class="ccf6f51">The native route bridges major assets directly between Ethereum and Polygon; third-party bridges can be faster or reach more chains, at the cost of another contract and fee. Judge any route by the <strong>net amount received</strong> and prefer audited options with deep liquidity.</div></section>
-    <details class="ca44408"><summary class="c5e94ea">Do I need POL to use assets on Polygon?</summary><div class="c1f47b6">Yes. You pay Ethereum gas to bridge, and you need a little POL on Polygon to transact once your assets arrive.</div></details>
+      <details class="ca44408"><summary class="c5e94ea">Do I need POL to use assets on Polygon?</summary><div class="c1f47b6">Yes. You pay Ethereum gas to bridge, and you need a little POL on Polygon to transact once your assets arrive.</div></details>
 <details class="ca44408"><summary class="c5e94ea">How long does it take to bridge to Polygon?</summary><div class="c1f47b6">Usually minutes, after your Ethereum transaction gets enough confirmations; busy periods take longer.</div></details>
 <details class="ca44408"><summary class="c5e94ea">Which assets can I bridge to Polygon?</summary><div class="c1f47b6">ETH, USDC, USDT, WBTC and other liquid tokens, depending on supported routes. The interface shows what is reachable and the amount received.</div></details>
 <details class="ca44408"><summary class="c5e94ea">Do I need an account to bridge to Polygon?</summary><div class="c1f47b6">No. You connect a self-custody wallet and bridge on-chain, with no sign-up and no custody.</div></details>
 <details class="ca44408"><summary class="c5e94ea">What happens if my transfer fails?</summary><div class="c1f47b6">A failed Ethereum transaction reverts and you keep your assets, though the gas for the attempt is spent.</div></details>
-  </main>
-
-  <section class="ce90e39"><h2>Sources</h2><ul class="cdb9ed5"><li><a class="c3558fa" href="https://docs.polygon.technology/" rel="nofollow noopener" target="_blank">Polygon documentation</a></li>
+    </main>
+    <section id="sources" class="c5a5621" aria-labelledby="sources-heading">
+      <h2 id="sources-heading" class="c4e2f02">Sources</h2>
+      <ul class="cdb9ed5"><li><a class="c3558fa" href="https://docs.polygon.technology/" rel="nofollow noopener" target="_blank">Polygon documentation</a></li>
 <li><a class="c3558fa" href="https://en.wikipedia.org/wiki/Polygon_(blockchain)" rel="nofollow noopener" target="_blank">Polygon on Wikipedia</a></li>
-<li><a class="c3558fa" href="https://polygonscan.com/" rel="nofollow noopener" target="_blank">PolygonScan explorer</a></li></ul></section>
-</div>
-<hr class="cc57248">
-<div class="cc70e78"><footer><span>Updated Oct 09, 2026</span><span>Self-custody · on-chain settlement · you hold your keys.</span></footer></div>
+<li><a class="c3558fa" href="https://polygonscan.com/" rel="nofollow noopener" target="_blank">PolygonScan explorer</a></li></ul>
+    </section>
+    <footer class="ce4cff1">
+      <span class="c019e03">Transfer guide</span>
+      <div>Updated Oct 09, 2026</div>
+    </footer>
+  </div>
+  <script>
+    (() => {
+      const amount = document.getElementById('amount');
+      const help = document.getElementById('amount-help');
+      const received = document.getElementById('received');
+      const fee = document.getElementById('fee');
+      const time = document.getElementById('time');
+      const format = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      let pending;
+      function calculate() {
+        const raw = amount.value.trim();
+        const validSyntax = /^(?:\d+(?:[.,]\d{1,2})?|[.,]\d{1,2})$/.test(raw);
+        const value = validSyntax ? Number(raw.replace(',', '.')) : NaN;
+        const valid = Number.isFinite(value) && value >= 1 && value <= 1000000;
+        amount.setAttribute('aria-invalid', String(!valid));
+        if (!valid) {
+          received.textContent = '—';
+          fee.textContent = '—';
+          time.textContent = '—';
+          help.textContent = raw ? 'Use 1–1,000,000 with up to two decimals and no thousands separators.' : 'Enter an amount to calculate your estimate.';
+          return;
+        }
+        const cents = Math.round(value * 100);
+        const feeCents = Math.round(cents * 6 / 1000) + 50;
+        const extraMinutes = Math.min(10, Math.ceil(value / 1000));
+        received.textContent = format.format((cents - feeCents) / 100);
+        fee.textContent = format.format(feeCents / 100);
+        time.textContent = `${2 + extraMinutes}–${6 + extraMinutes} min`;
+        help.textContent = 'Enter an amount from 1 to 1,000,000 units.';
+      }
+      amount.addEventListener('input', () => {
+        clearTimeout(pending);
+        pending = setTimeout(calculate, 180);
+      });
+      amount.addEventListener('blur', () => {
+        clearTimeout(pending);
+        calculate();
+      });
+      calculate();
+    })();
+  </script>
 </body>
 </html>
